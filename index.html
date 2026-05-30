@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Phase Labs | Frontend Developer</title>
 
-  <meta name="description" content="Portfolio personal de Thiago Cainelli. Desarrollo frontend, interfaces modernas, motion design y experiencias digitales.">
+  <meta
+    name="description"
+    content="Portfolio personal de Thiago Cainelli. Desarrollo frontend, interfaces modernas, motion design y experiencias digitales."
+  >
 
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
 </head>
 
 <body>
 
   <div class="background-glow"></div>
+
+  <!-- NAVBAR -->
 
   <header class="navbar">
 
@@ -27,13 +38,16 @@
     </div>
 
     <nav>
+
       <a href="#home">Inicio</a>
       <a href="#about">Sobre mí</a>
       <a href="#projects">Proyectos</a>
       <a href="#contact">Contacto</a>
+
     </nav>
 
   </header>
+
 
   <main>
 
@@ -48,25 +62,25 @@
         </p>
 
         <h1>
-          Construyo experiencias digitales modernas con foco en diseño e interacción.
+          Diseño experiencias digitales donde la estética y la interacción trabajan juntas.
         </h1>
 
         <p class="description">
-          Phase Labs es mi portfolio personal. Un espacio donde desarrollo proyectos frontend, experimento con interfaces modernas y exploro nuevas formas de combinar tecnología, movimiento y diseño visual.
+          Soy Thiago Cainelli. Construyo interfaces modernas, animaciones cuidadas y experiencias web enfocadas en percepción visual, fluidez e identidad digital.
         </p>
 
         <div class="hero-buttons">
 
           <button
             class="primary-btn"
-            onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
+            onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
           >
             Explorar proyectos
           </button>
 
           <button
             class="secondary-btn"
-            onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
           >
             Contacto
           </button>
@@ -79,23 +93,61 @@
       <div class="hero-card">
 
         <div class="card-top">
+
           <span></span>
           <span></span>
           <span></span>
+
         </div>
 
-        <div class="interactive-circle"></div>
+        <div class="interactive-circle">
+
+          <div class="circle-content">
+
+            <span>PHASE LABS</span>
+
+            <h3>
+              Frontend
+            </h3>
+
+            <p>
+              UI · Motion · Experience
+            </p>
+
+          </div>
+
+        </div>
 
         <div class="stats">
 
           <div>
-            <h3>Frontend</h3>
-            <p>HTML · CSS · JavaScript</p>
+
+            <h3>01</h3>
+
+            <p>
+              Frontend Interfaces
+            </p>
+
           </div>
 
           <div>
-            <h3>Motion</h3>
-            <p>UI Effects · Interactions</p>
+
+            <h3>02</h3>
+
+            <p>
+              Visual Experiences
+            </p>
+
+          </div>
+
+          <div>
+
+            <h3>03</h3>
+
+            <p>
+              Creative Development
+            </p>
+
           </div>
 
         </div>
@@ -110,15 +162,22 @@
     <section class="about" id="about">
 
       <div class="section-title">
+
         <span>Sobre mí</span>
-        <h2>Diseño, desarrollo y experiencia.</h2>
+
+        <h2>
+          Diseño, desarrollo y experiencia.
+        </h2>
+
       </div>
 
       <div class="about-grid">
 
         <div class="about-card">
 
-          <h3>Frontend UI</h3>
+          <h3>
+            Frontend UI
+          </h3>
 
           <p>
             Desarrollo interfaces modernas enfocadas en claridad visual, experiencia de usuario y rendimiento.
@@ -126,24 +185,26 @@
 
         </div>
 
-
         <div class="about-card">
 
-          <h3>Desarrollo Web</h3>
+          <h3>
+            Desarrollo Web
+          </h3>
 
           <p>
-            Construyo sitios y experiencias digitales utilizando tecnologías frontend modernas y buenas prácticas de desarrollo.
+            Construyo sitios y experiencias digitales utilizando HTML, CSS y JavaScript con atención al detalle.
           </p>
 
         </div>
 
-
         <div class="about-card">
 
-          <h3>Motion & UX</h3>
+          <h3>
+            Motion & UX
+          </h3>
 
           <p>
-            Me interesa crear animaciones, microinteracciones y detalles visuales que hagan que una interfaz se sienta viva.
+            Me interesa crear animaciones y microinteracciones que aporten personalidad sin afectar la usabilidad.
           </p>
 
         </div>
@@ -158,11 +219,18 @@
     <section class="projects" id="projects">
 
       <div class="section-title">
+
         <span>Proyectos</span>
-        <h2>Experiencias digitales seleccionadas.</h2>
+
+        <h2>
+          Experiencias digitales seleccionadas.
+        </h2>
+
       </div>
 
       <div class="project-grid">
+
+        <!-- DASHBOARD -->
 
         <div class="project-card">
 
@@ -174,12 +242,56 @@
             Concepto visual enfocado en visualización de datos, interfaces modernas y diseño futurista.
           </p>
 
-          <button>
+          <button class="project-toggle">
             Ver proyecto
           </button>
 
+          <div class="project-preview">
+
+            <div class="dashboard-demo">
+
+              <div class="metric-card">
+
+                <span>Revenue</span>
+
+                <strong>$48.290</strong>
+
+              </div>
+
+              <div class="metric-card">
+
+                <span>Users</span>
+
+                <strong>1.284</strong>
+
+              </div>
+
+              <div class="metric-card">
+
+                <span>Growth</span>
+
+                <strong>+24%</strong>
+
+              </div>
+
+              <div class="chart">
+
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+                <div class="bar bar-4"></div>
+                <div class="bar bar-5"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
+
+        <!-- LUXURY -->
 
         <div class="project-card light">
 
@@ -191,12 +303,36 @@
             Landing premium inspirada en marcas de lujo, enfocada en tipografía, percepción visual y experiencia editorial.
           </p>
 
-          <button>
+          <button class="project-toggle">
             Ver proyecto
           </button>
 
+          <div class="project-preview">
+
+            <div class="luxury-demo">
+
+              <div class="luxury-image"></div>
+
+              <h4>
+                The New Collection
+              </h4>
+
+              <p>
+                Crafted for modern living.
+              </p>
+
+              <button class="luxury-btn">
+                Discover More
+              </button>
+
+            </div>
+
+          </div>
+
         </div>
 
+
+        <!-- MOTION -->
 
         <div class="project-card">
 
@@ -208,9 +344,25 @@
             Exploración de animaciones, transiciones suaves y efectos interactivos enfocados en experiencia visual.
           </p>
 
-          <button>
+          <button class="project-toggle">
             Ver proyecto
           </button>
+
+          <div class="project-preview">
+
+            <div class="motion-demo">
+
+              <div class="blob blob-1"></div>
+              <div class="blob blob-2"></div>
+              <div class="blob blob-3"></div>
+
+              <div class="motion-center">
+                Motion UI
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -224,8 +376,13 @@
     <section class="contact" id="contact">
 
       <div class="section-title">
+
         <span>Contacto</span>
-        <h2>Conectemos.</h2>
+
+        <h2>
+          Conectemos.
+        </h2>
+
       </div>
 
       <div class="contact-box">
@@ -237,11 +394,10 @@
           </h3>
 
           <p>
-            Si querés conocer más sobre mis proyectos, seguir mi trabajo o simplemente conectar, podés encontrarme en los siguientes canales.
+            Si querés seguir mi trabajo, conocer mis proyectos o intercambiar ideas sobre diseño y desarrollo frontend, podés encontrarme acá.
           </p>
 
         </div>
-
 
         <div class="contact-links">
 
@@ -273,7 +429,21 @@
 
   </main>
 
+
+  <footer class="footer">
+
+    <div class="footer-logo">
+      Phase Labs.
+    </div>
+
+    <p>
+      Portfolio personal de Thiago Cainelli.
+    </p>
+
+  </footer>
+
   <script src="script.js"></script>
 
 </body>
+
 </html>
