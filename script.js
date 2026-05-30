@@ -1,47 +1,21 @@
-/* ===================================== */
-/* PHASE LABS */
-/* SCRIPT V2 */
-/* ===================================== */
+/* ==========================================
+   PHASE LABS
+   SCRIPT.JS
+========================================== */
 
 
-/* ===================================== */
-/* HERO SPHERE */
-/* ===================================== */
+/* ==========================================
+   NAVBAR SCROLL
+========================================== */
 
-const sphere = document.querySelector(
-  ".interactive-circle"
-);
-
-window.addEventListener("mousemove", (e) => {
-
-  if (!sphere) return;
-
-  const x =
-    (window.innerWidth / 2 - e.clientX) / 35;
-
-  const y =
-    (window.innerHeight / 2 - e.clientY) / 35;
-
-  sphere.style.transform =
-    `translate(${x}px, ${y}px)`;
-});
-
-
-/* ===================================== */
-/* NAVBAR SCROLL */
-/* ===================================== */
-
-const navbar =
-  document.querySelector(".navbar");
+const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
-
-  if (!navbar) return;
 
   if (window.scrollY > 40) {
 
     navbar.style.background =
-      "rgba(5,7,18,.92)";
+      "rgba(5, 7, 18, 0.92)";
 
     navbar.style.borderBottom =
       "1px solid rgba(255,255,255,.08)";
@@ -49,7 +23,7 @@ window.addEventListener("scroll", () => {
   } else {
 
     navbar.style.background =
-      "rgba(5,7,18,.75)";
+      "rgba(5, 7, 18, 0.65)";
 
     navbar.style.borderBottom =
       "1px solid rgba(255,255,255,.05)";
@@ -58,42 +32,41 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ===================================== */
-/* ACTIVE NAV */
-/* ===================================== */
+/* ==========================================
+   ACTIVE NAV LINKS
+========================================== */
 
-const sections =
-  document.querySelectorAll("section");
-
-const navLinks =
-  document.querySelectorAll("nav a");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
 
   let current = "";
 
-  sections.forEach((section) => {
+  sections.forEach(section => {
 
     const sectionTop =
       section.offsetTop - 180;
 
-    if (window.scrollY >= sectionTop) {
+    const sectionHeight =
+      section.clientHeight;
 
-      current =
-        section.getAttribute("id");
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute("id");
     }
 
   });
 
-  navLinks.forEach((link) => {
+  navLinks.forEach(link => {
 
     link.classList.remove("active");
 
     if (
-      link.getAttribute("href")
-      === `#${current}`
+      link.getAttribute("href") === `#${current}`
     ) {
-
       link.classList.add("active");
     }
 
@@ -102,16 +75,198 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ===================================== */
-/* FADE IN */
-/* ===================================== */
+/* ==========================================
+   HERO PARALLAX
+========================================== */
+
+const heroCard =
+  document.querySelector(".hero-card");
+
+window.addEventListener("mousemove", (e) => {
+
+  if (!heroCard) return;
+
+  const x =
+    (window.innerWidth / 2 - e.clientX) *
+    0.01;
+
+  const y =
+    (window.innerHeight / 2 - e.clientY) *
+    0.01;
+
+  heroCard.style.transform =
+    `translate(${x}px, ${y}px)`;
+
+});
+
+
+/* ==========================================
+   PHASE LABS ORB
+========================================== */
+
+const circle =
+  document.querySelector(".interactive-circle");
+
+window.addEventListener("mousemove", (e) => {
+
+  if (!circle) return;
+
+  const x =
+    (window.innerWidth / 2 - e.pageX) / 35;
+
+  const y =
+    (window.innerHeight / 2 - e.pageY) / 35;
+
+  circle.style.transform =
+    `translate(${x}px, ${y}px)`;
+});
+
+
+/* ==========================================
+   CARD GLOW EFFECT
+========================================== */
+
+const cards =
+  document.querySelectorAll(
+    ".about-card, .project-card"
+  );
+
+cards.forEach(card => {
+
+  card.addEventListener("mousemove", e => {
+
+    const rect =
+      card.getBoundingClientRect();
+
+    const x =
+      e.clientX - rect.left;
+
+    const y =
+      e.clientY - rect.top;
+
+    if (
+      card.classList.contains("light")
+    ) {
+      return;
+    }
+
+    card.style.background = `
+      radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(125,137,255,.14),
+        rgba(255,255,255,.03)
+      )
+    `;
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    if (
+      card.classList.contains("light")
+    ) {
+      return;
+    }
+
+    card.style.background =
+      "rgba(255,255,255,.03)";
+  });
+
+});
+
+
+/* ==========================================
+   PROJECT PREVIEWS
+========================================== */
+
+const projectButtons =
+  document.querySelectorAll(
+    ".project-toggle"
+  );
+
+projectButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const preview =
+      button.nextElementSibling;
+
+    const isOpen =
+      preview.classList.contains("open");
+
+    document
+      .querySelectorAll(".project-preview")
+      .forEach(item => {
+
+        item.classList.remove("open");
+
+        item.style.maxHeight = null;
+      });
+
+    document
+      .querySelectorAll(".project-toggle")
+      .forEach(btn => {
+
+        btn.textContent =
+          "Ver proyecto";
+      });
+
+    if (!isOpen) {
+
+      preview.classList.add("open");
+
+      preview.style.maxHeight =
+        preview.scrollHeight + "px";
+
+      button.textContent =
+        "Ocultar proyecto";
+    }
+
+  });
+
+});
+
+
+/* ==========================================
+   BUTTON MICRO INTERACTIONS
+========================================== */
+
+const buttons =
+  document.querySelectorAll("button");
+
+buttons.forEach(button => {
+
+  button.addEventListener(
+    "mouseenter",
+    () => {
+
+      button.style.transform =
+        "translateY(-3px)";
+    }
+  );
+
+  button.addEventListener(
+    "mouseleave",
+    () => {
+
+      button.style.transform =
+        "translateY(0)";
+    }
+  );
+
+});
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
 
 const observer =
   new IntersectionObserver(
 
-    (entries) => {
+    entries => {
 
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
 
         if (entry.isIntersecting) {
 
@@ -130,188 +285,24 @@ const observer =
 
   );
 
-const hiddenElements =
-  document.querySelectorAll(
-    ".about-card, .project-card, .contact-box, .section-title"
-  );
+document
+  .querySelectorAll(
+    ".section-title, .about-card, .project-card, .contact-box, .footer"
+  )
+  .forEach(el => {
 
-hiddenElements.forEach((el) => {
+    el.classList.add(
+      "hidden-element"
+    );
 
-  el.classList.add(
-    "hidden-element"
-  );
+    observer.observe(el);
 
-  observer.observe(el);
-
-});
-
-
-/* ===================================== */
-/* PROJECTS SYSTEM */
-/* ===================================== */
-
-const projectButtons =
-  document.querySelectorAll(
-    ".project-toggle"
-  );
-
-projectButtons.forEach((button) => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const currentCard =
-        button.closest(
-          ".project-card"
-        );
-
-      const alreadyOpen =
-        currentCard.classList.contains(
-          "active"
-        );
-
-      document
-        .querySelectorAll(
-          ".project-card"
-        )
-        .forEach((card) => {
-
-          card.classList.remove(
-            "active"
-          );
-
-          const btn =
-            card.querySelector(
-              ".project-toggle"
-            );
-
-          if (btn) {
-
-            btn.textContent =
-              "Ver proyecto";
-          }
-
-        });
-
-      if (!alreadyOpen) {
-
-        currentCard.classList.add(
-          "active"
-        );
-
-        button.textContent =
-          "Ocultar proyecto";
-      }
-
-    }
-  );
-
-});
+  });
 
 
-/* ===================================== */
-/* CARD HOVER GLOW */
-/* ===================================== */
-
-const cards =
-  document.querySelectorAll(
-    ".about-card, .project-card"
-  );
-
-cards.forEach((card) => {
-
-  card.addEventListener(
-    "mousemove",
-    (e) => {
-
-      if (
-        card.classList.contains(
-          "light"
-        )
-      ) {
-        return;
-      }
-
-      const rect =
-        card.getBoundingClientRect();
-
-      const x =
-        e.clientX - rect.left;
-
-      const y =
-        e.clientY - rect.top;
-
-      card.style.background =
-        `
-        radial-gradient(
-          circle at ${x}px ${y}px,
-          rgba(125,137,255,.15),
-          rgba(255,255,255,.03)
-        )
-      `;
-    }
-  );
-
-  card.addEventListener(
-    "mouseleave",
-    () => {
-
-      if (
-        card.classList.contains(
-          "light"
-        )
-      ) {
-
-        card.style.background =
-          "#f4f1ea";
-
-        return;
-      }
-
-      card.style.background =
-        "rgba(255,255,255,.03)";
-    }
-  );
-
-});
-
-
-/* ===================================== */
-/* BUTTON MICRO INTERACTION */
-/* ===================================== */
-
-const buttons =
-  document.querySelectorAll(
-    "button"
-  );
-
-buttons.forEach((button) => {
-
-  button.addEventListener(
-    "mouseenter",
-    () => {
-
-      button.style.transform =
-        "scale(1.03)";
-    }
-  );
-
-  button.addEventListener(
-    "mouseleave",
-    () => {
-
-      button.style.transform =
-        "scale(1)";
-    }
-  );
-
-});
-
-
-/* ===================================== */
-/* BACKGROUND GLOW */
-/* ===================================== */
+/* ==========================================
+   BACKGROUND GLOW FLOAT
+========================================== */
 
 const glow =
   document.querySelector(
@@ -322,28 +313,60 @@ setInterval(() => {
 
   if (!glow) return;
 
-  const x =
-    (Math.random() * 120) - 60;
+  const randomX =
+    Math.random() * 100 - 50;
 
-  const y =
-    (Math.random() * 120) - 60;
+  const randomY =
+    Math.random() * 100 - 50;
 
   glow.style.transform =
-    `translate(${x}px, ${y}px)`;
+    `translate(${randomX}px, ${randomY}px)`;
 
-}, 5000);
+}, 4500);
 
 
-/* ===================================== */
-/* PAGE LOADED */
-/* ===================================== */
+/* ==========================================
+   SMOOTH SCROLL FOR NAV
+========================================== */
 
-window.addEventListener(
-  "load",
-  () => {
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach(anchor => {
 
-    document.body.classList.add(
-      "loaded"
+    anchor.addEventListener(
+      "click",
+      function (e) {
+
+        e.preventDefault();
+
+        const target =
+          document.querySelector(
+            this.getAttribute("href")
+          );
+
+        if (!target) return;
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
     );
-  }
-);
+
+  });
+
+
+/* ==========================================
+   PAGE LOADED
+========================================== */
+
+window.addEventListener("load", () => {
+
+  document.body.classList.add(
+    "loaded"
+  );
+
+});
