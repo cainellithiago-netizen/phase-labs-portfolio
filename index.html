@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Phase Labs</title>
+  <title>Phase Labs | Frontend Developer</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Portfolio personal de Thiago Cainelli. Desarrollo frontend, interfaces modernas, motion design y experiencias digitales.">
+
+  <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +28,7 @@
 
     <nav>
       <a href="#home">Inicio</a>
-      <a href="#about">Estudio</a>
+      <a href="#about">Sobre mí</a>
       <a href="#projects">Proyectos</a>
       <a href="#contact">Contacto</a>
     </nav>
@@ -35,29 +37,37 @@
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero" id="home">
 
       <div class="hero-left">
 
         <p class="small-text">
-          Creative Developer / Digital Experiences
+          FRONTEND DEVELOPER · PHASE LABS
         </p>
 
         <h1>
-          Diseño y desarrollo experiencias digitales modernas.
+          Construyo experiencias digitales modernas con foco en diseño e interacción.
         </h1>
 
         <p class="description">
-          Interfaces visuales, interacción, motion design y desarrollo frontend enfocado en percepción, identidad y experiencia visual.
+          Phase Labs es mi portfolio personal. Un espacio donde desarrollo proyectos frontend, experimento con interfaces modernas y exploro nuevas formas de combinar tecnología, movimiento y diseño visual.
         </p>
 
         <div class="hero-buttons">
 
-          <button class="primary-btn">
+          <button
+            class="primary-btn"
+            onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })"
+          >
             Explorar proyectos
           </button>
 
-          <button class="secondary-btn">
+          <button
+            class="secondary-btn"
+            onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+          >
             Contacto
           </button>
 
@@ -80,12 +90,12 @@
 
           <div>
             <h3>Frontend</h3>
-            <p>Interactive UI</p>
+            <p>HTML · CSS · JavaScript</p>
           </div>
 
           <div>
-            <h3>Visual</h3>
-            <p>Creative Motion</p>
+            <h3>Motion</h3>
+            <p>UI Effects · Interactions</p>
           </div>
 
         </div>
@@ -95,31 +105,23 @@
     </section>
 
 
+    <!-- SOBRE MI -->
 
     <section class="about" id="about">
 
       <div class="section-title">
-        <span>Estudio</span>
-        <h2>Construyendo identidad digital.</h2>
+        <span>Sobre mí</span>
+        <h2>Diseño, desarrollo y experiencia.</h2>
       </div>
 
       <div class="about-grid">
 
         <div class="about-card">
-          <h3>Diseño Visual</h3>
+
+          <h3>Frontend UI</h3>
 
           <p>
-            Interfaces modernas enfocadas en percepción visual, minimalismo y experiencia estética.
-          </p>
-        </div>
-
-
-        <div class="about-card">
-
-          <h3>Desarrollo</h3>
-
-          <p>
-            Sitios interactivos creados con HTML, CSS y JavaScript priorizando fluidez y calidad.
+            Desarrollo interfaces modernas enfocadas en claridad visual, experiencia de usuario y rendimiento.
           </p>
 
         </div>
@@ -127,10 +129,21 @@
 
         <div class="about-card">
 
-          <h3>Interacciones</h3>
+          <h3>Desarrollo Web</h3>
 
           <p>
-            Motion design, hover effects, transiciones suaves y elementos dinámicos.
+            Construyo sitios y experiencias digitales utilizando tecnologías frontend modernas y buenas prácticas de desarrollo.
+          </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+          <h3>Motion & UX</h3>
+
+          <p>
+            Me interesa crear animaciones, microinteracciones y detalles visuales que hagan que una interfaz se sienta viva.
           </p>
 
         </div>
@@ -140,17 +153,16 @@
     </section>
 
 
+    <!-- PROYECTOS -->
 
     <section class="projects" id="projects">
 
       <div class="section-title">
         <span>Proyectos</span>
-        <h2>Experiencias digitales.</h2>
+        <h2>Experiencias digitales seleccionadas.</h2>
       </div>
 
-
       <div class="project-grid">
-
 
         <div class="project-card">
 
@@ -159,7 +171,7 @@
           <h3>Interactive Dashboard</h3>
 
           <p>
-            Concepto visual enfocado en diseño futurista y experiencia interactiva.
+            Concepto visual enfocado en visualización de datos, interfaces modernas y diseño futurista.
           </p>
 
           <button>
@@ -167,7 +179,6 @@
           </button>
 
         </div>
-
 
 
         <div class="project-card light">
@@ -177,7 +188,7 @@
           <h3>Luxury Landing</h3>
 
           <p>
-            Landing minimalista creada para transmitir percepción premium y modernidad.
+            Landing premium inspirada en marcas de lujo, enfocada en tipografía, percepción visual y experiencia editorial.
           </p>
 
           <button>
@@ -185,7 +196,6 @@
           </button>
 
         </div>
-
 
 
         <div class="project-card">
@@ -195,7 +205,7 @@
           <h3>Motion Experience</h3>
 
           <p>
-            Experimento visual con animaciones suaves y efectos interactivos.
+            Exploración de animaciones, transiciones suaves y efectos interactivos enfocados en experiencia visual.
           </p>
 
           <button>
@@ -204,31 +214,30 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
+    <!-- CONTACTO -->
 
     <section class="contact" id="contact">
 
       <div class="section-title">
         <span>Contacto</span>
-        <h2>Construyamos algo visualmente diferente.</h2>
+        <h2>Conectemos.</h2>
       </div>
-
 
       <div class="contact-box">
 
         <div>
 
           <h3>
-            Disponible para proyectos creativos.
+            Hablemos.
           </h3>
 
           <p>
-            Desarrollo frontend, interfaces modernas y experiencias digitales enfocadas en impacto visual.
+            Si querés conocer más sobre mis proyectos, seguir mi trabajo o simplemente conectar, podés encontrarme en los siguientes canales.
           </p>
 
         </div>
@@ -236,16 +245,24 @@
 
         <div class="contact-links">
 
-          <a href="#">
+          <a href="mailto:cainellithiago@gmail.com">
+            cainellithiago@gmail.com
+          </a>
+
+          <a
+            href="https://www.instagram.com/phaselabs.online/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Instagram
           </a>
 
-          <a href="#">
+          <a
+            href="https://github.com/cainellithiago-netizen/phase-labs-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
-          </a>
-
-          <a href="#">
-            LinkedIn
           </a>
 
         </div>

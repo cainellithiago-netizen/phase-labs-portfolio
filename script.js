@@ -1,28 +1,50 @@
+/* ========================= */
+/* HERO CIRCLE PARALLAX */
+/* ========================= */
+
 const circle = document.querySelector('.interactive-circle');
 
 window.addEventListener('mousemove', (e) => {
 
   if (!circle) return;
 
-  const x = (window.innerWidth / 2 - e.pageX) / 35;
-  const y = (window.innerHeight / 2 - e.pageY) / 35;
+  const x =
+    (window.innerWidth / 2 - e.clientX) / 35;
 
-  circle.style.transform = `translate(${x}px, ${y}px)`;
+  const y =
+    (window.innerHeight / 2 - e.clientY) / 35;
+
+  circle.style.transform =
+    `translate(${x}px, ${y}px)`;
 });
 
 
-/* ===== CARDS INTERACTION ===== */
+/* ========================= */
+/* CARD GLOW EFFECT */
+/* ========================= */
 
-const cards = document.querySelectorAll('.project-card, .about-card');
+const cards = document.querySelectorAll(
+  '.project-card, .about-card'
+);
 
 cards.forEach((card) => {
 
   card.addEventListener('mousemove', (e) => {
 
-    const rect = card.getBoundingClientRect();
+    /* Luxury Landing conserva identidad */
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (card.classList.contains('light')) {
+      return;
+    }
+
+    const rect =
+      card.getBoundingClientRect();
+
+    const x =
+      e.clientX - rect.left;
+
+    const y =
+      e.clientY - rect.top;
 
     card.style.background = `
       radial-gradient(
@@ -36,102 +58,173 @@ cards.forEach((card) => {
 
   card.addEventListener('mouseleave', () => {
 
-    card.style.background = 'rgba(255,255,255,0.03)';
+    if (card.classList.contains('light')) {
+
+      card.style.background =
+        '#f4f1ea';
+
+      return;
+    }
+
+    card.style.background =
+      'rgba(255,255,255,0.03)';
   });
 });
 
 
-/* ===== BUTTONS EFFECT ===== */
+/* ========================= */
+/* BUTTON EFFECT */
+/* ========================= */
 
-const buttons = document.querySelectorAll('button');
+const buttons =
+  document.querySelectorAll('button');
 
 buttons.forEach((button) => {
 
   button.addEventListener('mouseenter', () => {
 
-    button.style.transform = 'scale(1.04)';
+    button.style.transform =
+      'scale(1.03)';
   });
-
 
   button.addEventListener('mouseleave', () => {
 
-    button.style.transform = 'scale(1)';
+    button.style.transform =
+      'scale(1)';
   });
+
 });
 
 
-/* ===== NAVBAR SCROLL ===== */
+/* ========================= */
+/* NAVBAR SCROLL */
+/* ========================= */
 
-const navbar = document.querySelector('.navbar');
+const navbar =
+  document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
 
-  if (window.scrollY > 50) {
+  if (!navbar) return;
 
-    navbar.style.background = 'rgba(5, 7, 18, 0.9)';
-    navbar.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+  if (window.scrollY > 40) {
+
+    navbar.style.background =
+      'rgba(5,7,18,0.92)';
+
+    navbar.style.borderBottom =
+      '1px solid rgba(255,255,255,0.08)';
 
   } else {
 
-    navbar.style.background = 'rgba(5, 7, 18, 0.65)';
-    navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+    navbar.style.background =
+      'rgba(5,7,18,0.75)';
+
+    navbar.style.borderBottom =
+      '1px solid rgba(255,255,255,0.05)';
   }
+
 });
 
 
-/* ===== HERO PARALLAX ===== */
+/* ========================= */
+/* FADE IN EFFECT */
+/* ========================= */
 
-const hero = document.querySelector('.hero');
+const observer =
+  new IntersectionObserver((entries) => {
 
-window.addEventListener('mousemove', (e) => {
+    entries.forEach((entry) => {
 
-  const moveX = (e.clientX - window.innerWidth / 2) * 0.008;
-  const moveY = (e.clientY - window.innerHeight / 2) * 0.008;
+      if (entry.isIntersecting) {
 
-  hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
-});
+        entry.target.classList.add(
+          'show-element'
+        );
+      }
 
+    });
 
-/* ===== FADE IN EFFECT ===== */
-
-const observer = new IntersectionObserver((entries) => {
-
-  entries.forEach((entry) => {
-
-    if (entry.isIntersecting) {
-
-      entry.target.classList.add('show-element');
-    }
+  }, {
+    threshold: 0.15
   });
 
-}, {
-  threshold: 0.15
-});
 
-
-const hiddenElements = document.querySelectorAll(
-  '.about-card, .project-card, .contact-box, .section-title'
-);
+const hiddenElements =
+  document.querySelectorAll(
+    '.about-card, .project-card, .contact-box, .section-title'
+  );
 
 hiddenElements.forEach((el) => {
 
   el.classList.add('hidden-element');
 
   observer.observe(el);
+
 });
 
 
-/* ===== RANDOM GLOW ===== */
+/* ========================= */
+/* RANDOM BACKGROUND GLOW */
+/* ========================= */
+
+const glow =
+  document.querySelector('.background-glow');
 
 setInterval(() => {
 
-  const glow = document.querySelector('.background-glow');
+  if (!glow) return;
 
-  const randomX = Math.random() * 100;
-  const randomY = Math.random() * 100;
+  const randomX =
+    (Math.random() * 120) - 60;
 
-  glow.style.transform = `
-    translate(${randomX - 50}px, ${randomY - 50}px)
-  `;
+  const randomY =
+    (Math.random() * 120) - 60;
 
-}, 4000);
+  glow.style.transform =
+    `translate(${randomX}px, ${randomY}px)`;
+
+}, 4500);
+
+
+/* ========================= */
+/* ACTIVE NAV LINK */
+/* ========================= */
+
+const sections =
+  document.querySelectorAll('section');
+
+const navLinks =
+  document.querySelectorAll('nav a');
+
+window.addEventListener('scroll', () => {
+
+  let current = '';
+
+  sections.forEach((section) => {
+
+    const sectionTop =
+      section.offsetTop - 150;
+
+    if (window.scrollY >= sectionTop) {
+
+      current = section.getAttribute('id');
+    }
+
+  });
+
+  navLinks.forEach((link) => {
+
+    link.classList.remove('active');
+
+    if (
+      link.getAttribute('href') ===
+      `#${current}`
+    ) {
+
+      link.classList.add('active');
+    }
+
+  });
+
+});
