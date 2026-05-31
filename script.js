@@ -153,7 +153,7 @@ cards.forEach(card => {
     card.style.background = `
       radial-gradient(
         circle at ${x}px ${y}px,
-        rgba(125,137,255,.14),
+        rgba(251, 251, 252, 0.14),
         rgba(255,255,255,.03)
       )
     `;
