@@ -663,6 +663,46 @@ nav a.active::after{
   translateY(-8px);
 }
 
+.project-card.light{
+
+  background:
+  linear-gradient(
+    135deg,
+    #f7f7f7,
+    #ececec
+  );
+
+  color:#111;
+
+  border:
+  1px solid rgba(0,0,0,.08);
+}
+
+.project-card.light h3{
+  color:#111;
+}
+
+.project-card.light p{
+  color:#555;
+}
+
+.project-card.light .project-toggle{
+
+  background:#111;
+
+  color:white;
+}
+
+.project-card.light .project-glow{
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,.8),
+    transparent 70%
+  );
+}
+
 .project-card h3{
 
   font-size:1.4rem;
@@ -1420,4 +1460,60 @@ nav a.active::after{
 
   box-shadow:
   0 20px 60px rgba(117,131,255,.12);
+}
+
+/* ================================================= */
+/* EMAIL POPUP */
+/* ================================================= */
+
+.email-popup{
+
+  display:none;
+
+  margin-top:12px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,.04);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+}
+
+.email-popup.active{
+  display:block;
+}
+
+.email-popup p{
+
+  margin-bottom:12px;
+
+  color:white;
+
+  word-break:break-word;
+}
+
+.email-popup button{
+
+  border:none;
+
+  cursor:pointer;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #7583ff,
+    #9ba6ff
+  );
+
+  color:white;
 }

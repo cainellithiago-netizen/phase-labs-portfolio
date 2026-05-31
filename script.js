@@ -370,3 +370,114 @@ window.addEventListener("load", () => {
   );
 
 });
+/* ==========================================
+   EMAIL POPUPS
+========================================== */
+
+const emailLink =
+  document.getElementById("email-link");
+
+const emailPopup =
+  document.getElementById("email-popup");
+
+const copyEmail =
+  document.getElementById("copy-email");
+
+if(emailLink && emailPopup){
+
+  emailLink.addEventListener("click", e => {
+
+    e.preventDefault();
+
+    emailPopup.classList.toggle("active");
+
+  });
+
+}
+
+if(copyEmail){
+
+  copyEmail.addEventListener("click", () => {
+
+    navigator.clipboard.writeText(
+      "cainellithiago@gmail.com"
+    );
+
+    copyEmail.textContent =
+      "Copiado ✓";
+
+    setTimeout(() => {
+
+      copyEmail.textContent =
+        "Copiar correo";
+
+    }, 2000);
+
+  });
+
+}
+
+
+/* ==========================================
+   FOOTER EMAIL
+========================================== */
+
+const footerEmailLink =
+  document.getElementById(
+    "footer-email-link"
+  );
+
+const footerEmailPopup =
+  document.getElementById(
+    "footer-email-popup"
+  );
+
+const footerCopyEmail =
+  document.getElementById(
+    "footer-copy-email"
+  );
+
+if(
+  footerEmailLink &&
+  footerEmailPopup
+){
+
+  footerEmailLink.addEventListener(
+    "click",
+    e => {
+
+      e.preventDefault();
+
+      footerEmailPopup.classList.toggle(
+        "active"
+      );
+
+    }
+  );
+
+}
+
+if(footerCopyEmail){
+
+  footerCopyEmail.addEventListener(
+    "click",
+    () => {
+
+      navigator.clipboard.writeText(
+        "cainellithiago@gmail.com"
+      );
+
+      footerCopyEmail.textContent =
+        "Copiado ✓";
+
+      setTimeout(() => {
+
+        footerCopyEmail.textContent =
+          "Copiar correo";
+
+      }, 2000);
+
+    }
+  );
+
+}
