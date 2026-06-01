@@ -679,7 +679,8 @@ nav a.active::after{
 }
 
 .project-card.light h3{
-  color:#111;
+  /* Título Luxury: dorado */
+  color:#D4AF37;
 }
 
 .project-card.light p{
@@ -688,9 +689,16 @@ nav a.active::after{
 
 .project-card.light .project-toggle{
 
-  background:#111;
+  /* Botón 'Ver proyecto' en versión Luxury: degradado dorado */
+  background: linear-gradient(135deg, #D4AF37, #B8872A);
+  color:#0b0b0b;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 8px 24px rgba(212,175,55,.12);
+}
 
-  color:white;
+.project-card.light .project-toggle:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 38px rgba(184,140,47,.18);
 }
 
 .project-card.light .project-glow{
@@ -925,9 +933,9 @@ nav a.active::after{
 
   border-radius:999px;
 
-  background:white;
-
-  color:black;
+  /* Dorado: fondo degradado y texto oscuro para contraste */
+  background: linear-gradient(135deg, #D4AF37, #B8872A);
+  color:#0b0b0b;
 }
 
 
