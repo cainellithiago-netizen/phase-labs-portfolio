@@ -698,7 +698,7 @@ nav a.active::after{
 
 .project-card.light .project-toggle:hover{
   transform: translateY(-3px);
-  box-shadow: 0 14px 38px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.18);
 }
 
 .project-card.light .project-glow{
@@ -737,7 +737,7 @@ nav a.active::after{
 
   padding:12px 22px;
 
-  color:rgb(228, 184, 120);
+  color:rgb(0, 0, 0);
 
   background:
   linear-gradient(
@@ -762,7 +762,7 @@ nav a.active::after{
   background:
   radial-gradient(
     circle,
-    rgba(117,131,255,.20),
+    rgba(58, 67, 150, 0.2),
     transparent 70%
   );
 }
