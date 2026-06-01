@@ -83,6 +83,7 @@ button{
   z-index:-1;
 }
 
+
 body::before{
 
   content:"";
@@ -135,6 +136,17 @@ body::before{
   1px solid rgba(255,255,255,.05);
 
   z-index:1000;
+}
+
+/* Hide/show navbar on scroll */
+.navbar {
+  transition: transform .28s ease, background .2s ease, border-color .2s ease;
+  will-change: transform;
+}
+
+.navbar.nav-hidden {
+  transform: translateY(-110%);
+  pointer-events: none;
 }
 
 .logo{
@@ -765,6 +777,60 @@ nav a.active::after{
     rgba(58, 67, 150, 0.2),
     transparent 70%
   );
+  transition: transform .45s ease, box-shadow .45s ease, opacity .45s ease;
+  transform-origin: center;
+}
+
+/* Themed glows per project */
+.project-card.theme-dashboard .project-glow{
+  background: radial-gradient(circle, rgba(89,108,255,0.28), transparent 70%);
+  box-shadow: 0 28px 90px rgba(89,108,255,0.10);
+}
+
+.project-card.theme-luxury .project-glow{
+  background: radial-gradient(circle, rgba(212,175,55,0.30), transparent 70%);
+  box-shadow: 0 28px 90px rgba(212,175,55,0.10);
+}
+
+.project-card.theme-motion .project-glow{
+  background: radial-gradient(circle, rgba(124,136,255,0.28), transparent 70%);
+  box-shadow: 0 28px 90px rgba(124,136,255,0.10);
+}
+
+.project-card:hover .project-glow{
+  transform: scale(1.08);
+  opacity:1;
+}
+
+/* Glowing outline for `Ver proyecto` buttons per theme */
+.project-toggle{
+  position:relative;
+  z-index:2;
+  transition: box-shadow .35s ease, transform .25s ease;
+}
+
+.project-card.theme-dashboard .project-toggle{
+  box-shadow: 0 8px 30px rgba(89,108,255,0.18), 0 0 18px rgba(89,108,255,0.10) inset;
+}
+.project-card.theme-dashboard .project-toggle:hover{
+  box-shadow: 0 18px 60px rgba(89,108,255,0.28), 0 0 30px rgba(89,108,255,0.16) inset;
+  transform: translateY(-3px);
+}
+
+.project-card.theme-luxury .project-toggle{
+  box-shadow: 0 8px 30px rgba(212,175,55,0.18), 0 0 18px rgba(212,175,55,0.08) inset;
+}
+.project-card.theme-luxury .project-toggle:hover{
+  box-shadow: 0 18px 60px rgba(212,175,55,0.26), 0 0 30px rgba(212,175,55,0.14) inset;
+  transform: translateY(-3px);
+}
+
+.project-card.theme-motion .project-toggle{
+  box-shadow: 0 8px 30px rgba(124,136,255,0.18), 0 0 18px rgba(124,136,255,0.10) inset;
+}
+.project-card.theme-motion .project-toggle:hover{
+  box-shadow: 0 18px 60px rgba(124,136,255,0.28), 0 0 30px rgba(124,136,255,0.16) inset;
+  transform: translateY(-3px);
 }
 
 
@@ -939,9 +1005,17 @@ nav a.active::after{
   animation: luxuryShine 5s linear infinite;
 }
 
+/* Bring the shine above the logo and use blend mode so it brightens the logo as it passes */
+.luxury-image::after{
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
 .luxury-image-logo{
   position:relative;
-  z-index:1;
+  z-index:2;
   width:auto;
   max-width:160px;
   height:auto;
@@ -1024,6 +1098,18 @@ nav a.active::after{
   background: rgba(10,12,24,.98);
   border: 1px solid rgba(255,255,255,.12);
   box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+
+/* Make overlay content scrollable on small screens */
+.luxury-overlay{
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.luxury-overlay-card{
+  max-height: calc(100vh - 80px);
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .luxury-overlay-close{

@@ -9,10 +9,13 @@
 ========================================== */
 
 const navbar = document.querySelector(".navbar");
+let lastScrollY = window.scrollY || 0;
 
 window.addEventListener("scroll", () => {
 
-  if (window.scrollY > 40) {
+  const currentY = window.scrollY;
+
+  if (currentY > 40) {
 
     navbar.style.background =
       "rgba(5, 7, 18, 0.92)";
@@ -29,7 +32,16 @@ window.addEventListener("scroll", () => {
       "1px solid rgba(255,255,255,.05)";
   }
 
-});
+  // Hide on scroll down, show on scroll up (mobile friendly)
+  if (currentY > lastScrollY && currentY > 60) {
+    navbar.classList.add("nav-hidden");
+  } else {
+    navbar.classList.remove("nav-hidden");
+  }
+
+  lastScrollY = currentY <= 0 ? 0 : currentY;
+
+}, { passive: true });
 
 
 /* ==========================================
@@ -72,7 +84,7 @@ window.addEventListener("scroll", () => {
 
   });
 
-});
+}, { passive: true });
 
 
 /* ==========================================

@@ -233,7 +233,7 @@
       <div class="project-grid">
                 <!-- DASHBOARD -->
 
-        <div class="project-card">
+        <div class="project-card theme-dashboard">
 
           <div class="project-glow"></div>
 
@@ -293,7 +293,7 @@
 
         <!-- LUXURY LANDING -->
 
-        <div class="project-card light">
+        <div class="project-card light theme-luxury">
 
           <div class="project-glow"></div>
 
@@ -335,35 +335,13 @@
 
           </div>
 
-          <div class="luxury-overlay">
-            <div class="luxury-overlay-card">
-              <button class="luxury-overlay-close" aria-label="Cerrar">
-                ×
-              </button>
-
-              <h4>
-                Luxury Landing — Ejemplo extendido
-              </h4>
-
-              <p>
-                Una experiencia editorial premium con tipografía elegante,
-                paleta de colores sobria y un enfoque visual minimalista.
-              </p>
-
-              <ul>
-                <li>Jerarquía tipográfica cuidada para una lectura de lujo.</li>
-                <li>Bloques de contenido limpios con espacio y ritmo visual.</li>
-                <li>Un detalle de producto o colección inspirado en moda premium.</li>
-              </ul>
-
-            </div>
-          </div>
+          <!-- luxury overlay moved to end of body for proper fixed positioning -->
 
         </div>
 
         <!-- MOTION EXPERIENCE -->
 
-        <div class="project-card">
+        <div class="project-card theme-motion">
 
           <div class="project-glow"></div>
 
@@ -615,6 +593,29 @@
     </div>
 
   </footer>
+
+<!-- Luxury overlay moved here so it's a direct child of body (fixes mobile clipping) -->
+<div class="luxury-overlay">
+  <div class="luxury-overlay-card">
+    <button class="luxury-overlay-close" aria-label="Cerrar">×</button>
+
+    <h4>
+      Luxury Landing — Ejemplo extendido
+    </h4>
+
+    <p>
+      Una experiencia editorial premium con tipografía elegante,
+      paleta de colores sobria y un enfoque visual minimalista.
+    </p>
+
+    <ul>
+      <li>Jerarquía tipográfica cuidada para una lectura de lujo.</li>
+      <li>Bloques de contenido limpios con espacio y ritmo visual.</li>
+      <li>Un detalle de producto o colección inspirado en moda premium.</li>
+    </ul>
+
+  </div>
+</div>
 
   <script src="script.js"></script>
 
