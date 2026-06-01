@@ -211,6 +211,18 @@ projectButtons.forEach(button => {
           "Ver proyecto";
       });
 
+    if (luxuryOverlay) {
+      luxuryOverlay.classList.remove("open");
+    }
+
+    document
+      .querySelectorAll(".luxury-btn")
+      .forEach(btn => {
+
+        btn.textContent =
+          "Descubrir más";
+      });
+
     if (!isOpen) {
 
       preview.classList.add("open");
@@ -225,6 +237,51 @@ projectButtons.forEach(button => {
   });
 
 });
+
+const luxuryButtons =
+  document.querySelectorAll(".luxury-btn");
+
+const luxuryOverlay =
+  document.querySelector(".luxury-overlay");
+
+const luxuryOverlayClose =
+  document.querySelector(".luxury-overlay-close");
+
+luxuryButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    if (!luxuryOverlay) return;
+
+    luxuryOverlay.classList.add("open");
+    button.textContent = "Ocultar más";
+
+  });
+
+});
+
+if (luxuryOverlayClose) {
+  luxuryOverlayClose.addEventListener("click", () => {
+
+    luxuryOverlay.classList.remove("open");
+
+    luxuryButtons.forEach(button => {
+      button.textContent = "Descubrir más";
+    });
+
+  });
+}
+
+if (luxuryOverlay) {
+  luxuryOverlay.addEventListener("click", event => {
+    if (event.target === luxuryOverlay) {
+      luxuryOverlay.classList.remove("open");
+      luxuryButtons.forEach(button => {
+        button.textContent = "Descubrir más";
+      });
+    }
+  });
+}
 
 
 /* ==========================================

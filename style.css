@@ -883,6 +883,7 @@ nav a.active::after{
 
 .luxury-demo{
 
+  position:relative;
   text-align:center;
 
   padding:20px;
@@ -936,6 +937,83 @@ nav a.active::after{
   /* Dorado: fondo degradado y texto oscuro para contraste */
   background: linear-gradient(135deg, #D4AF37, #B8872A);
   color:#0b0b0b;
+}
+
+.luxury-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1500;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(6px);
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.luxury-overlay.open{
+  display:flex;
+}
+
+.luxury-overlay-card{
+  position:relative;
+  max-width:640px;
+  width:100%;
+  padding:32px;
+  border-radius:32px;
+  background: rgba(10,12,24,.98);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+
+.luxury-overlay-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:auto;
+  height:auto;
+  padding:0;
+  border:none;
+  background:transparent;
+  color:white;
+  font-size:1.6rem;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.luxury-overlay-close:hover{
+  opacity:.8;
+}
+
+.luxury-overlay-card h4{
+  margin-bottom:18px;
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  color:white;
+}
+
+.luxury-overlay-card p,
+.luxury-overlay-card li{
+  color:white;
+  line-height:1.8;
+}
+
+.luxury-overlay-card ul{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+  display:grid;
+  gap:10px;
+}
+
+.luxury-overlay-card li{
+  padding:14px 16px;
+  border-radius:18px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
 }
 
 
