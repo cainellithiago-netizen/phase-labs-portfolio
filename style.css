@@ -138,14 +138,15 @@ body::before{
   z-index:1000;
 }
 
-/* Hide/show navbar on scroll */
+/* Hide/show navbar on scroll (suavizado) */
 .navbar {
-  transition: transform .28s ease, background .2s ease, border-color .2s ease;
-  will-change: transform;
+  transition: transform .95s cubic-bezier(.22,.9,.28,1), opacity .75s ease, background .2s ease, border-color .2s ease;
+  will-change: transform, opacity;
 }
 
 .navbar.nav-hidden {
   transform: translateY(-110%);
+  opacity: 0;
   pointer-events: none;
 }
 
