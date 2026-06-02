@@ -266,6 +266,7 @@ luxuryButtons.forEach(button => {
     if (!luxuryOverlay) return;
 
     luxuryOverlay.classList.add("open");
+    document.body.classList.add('overlay-open');
     button.textContent = "Ocultar más";
 
   });
@@ -276,6 +277,7 @@ if (luxuryOverlayClose) {
   luxuryOverlayClose.addEventListener("click", () => {
 
     luxuryOverlay.classList.remove("open");
+      document.body.classList.remove('overlay-open');
 
     luxuryButtons.forEach(button => {
       button.textContent = "Descubrir más";
@@ -288,6 +290,7 @@ if (luxuryOverlay) {
   luxuryOverlay.addEventListener("click", event => {
     if (event.target === luxuryOverlay) {
       luxuryOverlay.classList.remove("open");
+      document.body.classList.remove('overlay-open');
       luxuryButtons.forEach(button => {
         button.textContent = "Descubrir más";
       });

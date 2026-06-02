@@ -958,10 +958,9 @@ nav a.active::after{
 
 .luxury-image{
 
-  position:relative;
-  width:100%;
+  background: linear-gradient(135deg, #D4AF37, #B8872A);
+  color:#0b0b0b;
   height:190px;
-
   border-radius:24px;
 
   background:
@@ -1041,11 +1040,60 @@ nav a.active::after{
     transform: translateX(120%) skewX(-25deg);
   }
 }
+.luxury-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1500;
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(6px);
+  justify-content:center;
+  align-items:center;
+  padding:30px;
+}
+
+.luxury-overlay.open{
+  display:flex;
+}
+
+.luxury-overlay-card{
+  position:relative;
+  max-width:640px;
+  width:100%;
+  padding:28px 32px;
+  overflow:hidden;
+
+  /* thinner illuminated border */
+  border: 1px solid rgba(255,255,255,0.06);
+
+  /* refined projection and subtle gold/blue glow on the edges only */
+  box-shadow:
+    0 28px 80px rgba(0,0,0,0.6),
+    0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* subtle glowing border using pseudo-element (edges only) */
+.luxury-overlay-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    0 0 30px 6px rgba(212,175,55,0.18),
+    0 0 60px 14px rgba(117,131,255,0.06);
+  opacity: .95;
+}
+
+/* when overlay open, prevent body scrolling to avoid double scrollbars */
+body.overlay-open{
+  overflow:hidden;
+}
 
 .luxury-demo h4{
   font-family:
-  'Playfair Display',
-  serif;
+    'Playfair Display',
+    serif;
 
   font-size:1.6rem;
 
@@ -1074,29 +1122,20 @@ nav a.active::after{
   color:#0b0b0b;
 }
 
+/* Make the Luxury "Descubrir más" button match the luxury theme (gold glow) */
+.project-card.theme-luxury .luxury-btn{
+  background: linear-gradient(135deg, #ad9d69, #c9b286) !important;
+  color: #000000;
+  box-shadow: 0 8px 30px rgba(212,175,55,0.18) !important, 0 0 18px rgba(212,175,55,0.10) inset !important;
+  transition: box-shadow .35s ease, transform .25s ease;
+}
+
+.project-card.theme-luxury .luxury-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 60px rgba(212,175,55,0.26), 0 0 30px rgba(212,175,55,0.14) inset;
+}
+
 .luxury-overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:1500;
-  background: rgba(0,0,0,.65);
-  backdrop-filter: blur(6px);
-  justify-content:center;
-  align-items:center;
-  padding:30px;
-}
-
-.luxury-overlay.open{
-  display:flex;
-}
-
-.luxury-overlay-card{
-  position:relative;
-  max-width:640px;
-  width:100%;
-  padding:32px;
-  border-radius:32px;
-  background: rgba(10,12,24,.98);
   border: 1px solid rgba(255,255,255,.12);
   box-shadow: 0 24px 80px rgba(0,0,0,.45);
 }
@@ -1111,6 +1150,9 @@ nav a.active::after{
   max-height: calc(100vh - 80px);
   overflow:auto;
   -webkit-overflow-scrolling: touch;
+  background: rgba(10,12,24,.98);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
 }
 
 .luxury-overlay-close{
