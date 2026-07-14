@@ -997,7 +997,6 @@ nav a.active::after{
 
 .luxury-image::after{
   content: "";
-<<<<<<< HEAD
   position: absolute;
   inset: 0;
   /* narrower, more natural soft highlight that moves across */
@@ -1010,31 +1009,11 @@ nav a.active::after{
   filter: blur(10px);
   opacity: 0.55;
   will-change: transform, opacity;
-=======
-  position:absolute;
-  inset:0;
-  background: linear-gradient(120deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 45%);
-  opacity:.4;
-  transform: translateX(-120%) skewX(-25deg);
-  animation: luxuryShine 5s linear infinite;
-}
-
-/* Bring the shine above the logo and use blend mode so it brightens the logo as it passes */
-.luxury-image::after{
-  z-index: 5;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  opacity: 0.75;
->>>>>>> 0723299010ac620a097eec64ed21b18a11f2977e
 }
 
 .luxury-image-logo{
   position:relative;
-<<<<<<< HEAD
   z-index:3;
-=======
-  z-index:2;
->>>>>>> 0723299010ac620a097eec64ed21b18a11f2977e
   width:auto;
   max-width:160px;
   height:auto;
@@ -1145,11 +1124,7 @@ body.overlay-open{
 .project-card.theme-luxury .luxury-btn{
   background: linear-gradient(135deg, #ad9d69, #c9b286) !important;
   color: #000000;
-<<<<<<< HEAD
   box-shadow: 0 8px 30px rgba(212,175,55,0.18), 0 0 18px rgba(212,175,55,0.10) inset;
-=======
-  box-shadow: 0 8px 30px rgba(212,175,55,0.18) !important, 0 0 18px rgba(212,175,55,0.10) inset !important;
->>>>>>> 0723299010ac620a097eec64ed21b18a11f2977e
   transition: box-shadow .35s ease, transform .25s ease;
 }
 
