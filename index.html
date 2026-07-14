@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Phase Labs | Frontend Developer</title>
+
+  <meta
+    name="description"
+    content="Phase Labs. Frontend Developer especializado en interfaces modernas, motion design y experiencias digitales."
+  >
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="background-glow"></div>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      Phase Labs.
+    </div>
+
+    <nav>
+
+      <a href="#home">Inicio</a>
+      <a href="#about">Estudio</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-left">
+
+        <p class="small-text">
+          INDEPENDENT DIGITAL STUDIO · PHASE LABS
+        </p>
+
+        <h1>
+          Diseño experiencias digitales donde la estética y la interacción trabajan juntas.
+        </h1>
+
+        <p class="description">
+          Phase Labs es un estudio digital independiente donde exploro frontend, interacción,
+          motion design y experiencias visuales modernas.
+          Cada proyecto es una oportunidad para combinar diseño,
+          tecnología y experiencia de usuario.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button
+            class="primary-btn"
+            onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
+          >
+            Explorar proyectos
+          </button>
+
+          <button
+            class="secondary-btn"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+          >
+            Contacto
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="card-top">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+        <div class="interactive-circle">
+
+          <div class="circle-content">
+
+            <span>PHASE LABS</span>
+
+            <h3>
+              Frontend
+            </h3>
+
+            <p>
+              UI · Motion · Experience
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="stats">
+
+          <div>
+
+            <h3>01</h3>
+
+            <p>
+              Frontend Interfaces
+            </p>
+
+          </div>
+
+          <div>
+
+            <h3>02</h3>
+
+            <p>
+              Visual Experiences
+            </p>
+
+          </div>
+
+          <div>
+
+            <h3>03</h3>
+
+            <p>
+              Creative Development
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+      <div class="section-title">
+
+        <span>Estudio</span>
+
+        <h2>
+          Un laboratorio para experimentar con diseño, código e interacción.
+        </h2>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3>
+            Frontend UI
+          </h3>
+
+          <p>
+            Desarrollo interfaces modernas enfocadas en claridad visual,
+            experiencia de usuario y rendimiento.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>
+            Desarrollo Web
+          </h3>
+
+          <p>
+            Construyo sitios y experiencias digitales utilizando HTML,
+            CSS y JavaScript con atención al detalle.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>
+            Motion & UX
+          </h3>
+
+          <p>
+            Animaciones, microinteracciones y sistemas visuales que aportan
+            personalidad sin afectar la usabilidad.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+      <div class="section-title">
+
+        <span>Proyectos</span>
+
+        <h2>
+          Experiencias digitales seleccionadas.
+        </h2>
+
+      </div>
+
+      <div class="project-grid">
+                <!-- DASHBOARD -->
+
+        <div class="project-card theme-dashboard">
+
+          <div class="project-glow"></div>
+
+          <h3>
+            Interactive Dashboard
+          </h3>
+
+          <p>
+            Concepto visual enfocado en visualización de datos,
+            interfaces modernas y diseño futurista.
+          </p>
+
+          <button class="project-toggle">
+            Ver proyecto
+          </button>
+
+          <div class="project-preview">
+
+            <div class="dashboard-demo">
+
+              <div class="metric-card">
+
+                <span>Revenue</span>
+                <strong>$48.290</strong>
+
+              </div>
+
+              <div class="metric-card">
+
+                <span>Users</span>
+                <strong>1.284</strong>
+
+              </div>
+
+              <div class="metric-card">
+
+                <span>Growth</span>
+                <strong>+24%</strong>
+
+              </div>
+
+              <div class="chart">
+
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+                <div class="bar bar-4"></div>
+                <div class="bar bar-5"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- LUXURY LANDING -->
+
+        <div class="project-card light theme-luxury">
+
+          <div class="project-glow"></div>
+
+          <h3>
+            Luxury Landing
+          </h3>
+
+          <p>
+            Landing premium inspirada en marcas de lujo,
+            enfocada en tipografía, percepción visual
+            y experiencia editorial.
+          </p>
+
+          <button class="project-toggle">
+            Ver proyecto
+          </button>
+
+          <div class="project-preview">
+
+            <div class="luxury-demo">
+
+              <div class="luxury-image">
+                <img src="img/ferrari-logo.png" alt="Ferrari logo" class="luxury-image-logo">
+              </div>
+
+              <h4>
+                The New Collection
+              </h4>
+
+              <p>
+                Crafted for modern living.
+              </p>
+
+              <button class="luxury-btn">
+                Descubrir más
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- luxury overlay moved to end of body for proper fixed positioning -->
+
+        </div>
+
+        <!-- MOTION EXPERIENCE -->
+
+        <div class="project-card theme-motion">
+
+          <div class="project-glow"></div>
+
+          <h3>
+            Motion Experience
+          </h3>
+
+          <p>
+            Exploración de animaciones,
+            transiciones suaves y efectos
+            interactivos enfocados en experiencia visual.
+          </p>
+
+          <button class="project-toggle">
+            Ver proyecto
+          </button>
+
+          <div class="project-preview">
+
+            <div class="motion-demo">
+
+              <div class="blob blob-1"></div>
+              <div class="blob blob-2"></div>
+              <div class="blob blob-3"></div>
+
+              <div class="motion-center">
+                Motion UI
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="contact" id="contact">
+
+      <div class="section-title">
+
+        <span>Contacto</span>
+
+        <h2>
+          Construyamos algo interesante.
+        </h2>
+
+      </div>
+
+      <div class="contact-box">
+
+        <div>
+
+          <h3>
+            Hablemos.
+          </h3>
+
+          <p>
+            Si querés seguir mi trabajo,
+            conocer mis proyectos o intercambiar ideas
+            sobre diseño, frontend y experiencias digitales,
+            podés encontrarme en los siguientes canales.
+          </p>
+
+        </div>
+
+        <div class="contact-links">
+
+        <a href="#" id="email-link">
+        Email
+        </a>
+
+        <div class="email-popup" id="email-popup">
+
+        <p>
+        cainellithiago@gmail.com
+        </p>
+
+        <button id="copy-email">
+        Copiar correo
+        </button>
+
+        </div>
+
+          <a
+            href="https://www.instagram.com/phaselabs.online/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://github.com/cainellithiago-netizen/phase-labs-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <span>
+      Disponible para nuevos proyectos
+    </span>
+
+    <h2>
+      Diseñando experiencias digitales,
+      una interfaz a la vez.
+    </h2>
+
+    <p>
+      Frontend, interacción, motion design
+      y exploración visual para productos digitales modernos.
+    </p>
+
+  </section>
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+          Phase Labs.
+        </div>
+
+        <p class="footer-description">
+          Estudio digital independiente enfocado en frontend,
+          interacción, motion design y experiencias visuales modernas.
+        </p>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>
+          Navegación
+        </h4>
+
+        <a href="#home">
+          Inicio
+        </a>
+
+        <a href="#about">
+          Estudio
+        </a>
+
+        <a href="#projects">
+          Proyectos
+        </a>
+
+        <a href="#contact">
+          Contacto
+        </a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>
+          Canales
+        </h4>
+
+        <a href="#" id="footer-email-link">
+        Email
+        </a>
+
+        <div class="email-popup" id="footer-email-popup">
+
+        <p>
+        cainellithiago@gmail.com
+        </p>
+
+        <button id="footer-copy-email">
+        Copiar correo
+        </button>
+
+      </div>
+
+        <a
+          href="https://www.instagram.com/phaselabs.online/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://github.com/cainellithiago-netizen/phase-labs-portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h4>
+          Información
+        </h4>
+
+        <span>
+          Argentina
+        </span>
+
+        <span>
+          Frontend Developer
+        </span>
+
+        <span>
+          Disponible para colaborar
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Phase Labs. Todos los derechos reservados.
+      </p>
+
+      <span>
+        Identidad visual v1.0 · Diseñado y desarrollado por Thiago Cainelli.
+      </span>
+
+    </div>
+
+  </footer>
+
+<!-- Luxury overlay moved here so it's a direct child of body (fixes mobile clipping) -->
+<div class="luxury-overlay">
+  <div class="luxury-overlay-card">
+    <button class="luxury-overlay-close" aria-label="Cerrar">×</button>
+
+    <h4>
+      Luxury Landing — Ejemplo extendido
+    </h4>
+
+    <p>
+      Una experiencia editorial premium con tipografía elegante,
+      paleta de colores sobria y un enfoque visual minimalista.
+    </p>
+
+    <ul>
+      <li>Jerarquía tipográfica cuidada para una lectura de lujo.</li>
+      <li>Bloques de contenido limpios con espacio y ritmo visual.</li>
+      <li>Un detalle de producto o colección inspirado en moda premium.</li>
+    </ul>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
