@@ -327,6 +327,27 @@ if (cvOverlay) {
   });
 }
 
+// Ensure mobile preserves sidebar layout only while CV overlay is open
+if (cvOverlay) {
+  const observer = new MutationObserver(() => {
+    if (cvOverlay.classList.contains('open') && window.innerWidth <= 480) {
+      document.body.classList.add('cv-preserve-mobile');
+    } else {
+      document.body.classList.remove('cv-preserve-mobile');
+    }
+  });
+
+  observer.observe(cvOverlay, { attributes: true, attributeFilter: ['class'] });
+
+  // remove class on resize if needed
+  window.addEventListener('resize', () => {
+    if (!cvOverlay.classList.contains('open')) {
+      document.body.classList.remove('cv-preserve-mobile');
+    } else if (window.innerWidth > 480) {
+      document.body.classList.remove('cv-preserve-mobile');
+    }
+  });
+}
 
 /* ==========================================
    BUTTON MICRO INTERACTIONS
