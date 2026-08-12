@@ -26,198 +26,75 @@ html{
 
   --radius:30px;
 }
+@media (max-width: 480px) {
+  /* Keep desktop-like sidebar on mobile: narrow left column + main content on the right */
+  .cv-container{
+    display:grid;
+    grid-template-columns: 110px 1fr;
+    gap:18px;
+    align-items:start;
+  }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
-  position:relative;
+  .cv-overlay-card{
+    width:100vw;
+    max-height:95vh;
+    border-radius:8px;
+    overflow:hidden;
+  }
+
+  .cv-sidebar{
+    width:110px;
+    min-width:110px;
+    padding:18px 8px;
+    border-right:1px solid rgba(117,131,255,.06);
+    height:100%;
+    align-self:stretch;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    overflow-y:auto;
+    text-align:center;
+  }
+
+  .cv-photo-placeholder{
+    width:86px;
+    height:86px;
+    border-radius:10px;
+    margin:0 auto;
+  }
+
+  .cv-name-sidebar{
+    font-size:0.9rem;
+    letter-spacing:0.8px;
+  }
+
+  .cv-title-sidebar{
+    font-size:0.65rem;
+  }
+
+  .cv-sidebar-list{
+    font-size:0.78rem;
+    text-align:left;
+    padding-left:8px;
+  }
+
+  .cv-main-content{
+    padding:18px 14px;
+    max-height:95vh;
+    overflow-y:auto;
+  }
+
+  /* Make headings slightly smaller for better fit */
+  .cv-main-title{ font-size:0.88rem; }
+
+  /* Keep decorative glows subtle or hidden to save rendering on small devices */
+  .cv-main-content::before{ display:none; }
+  .cv-sidebar::before{ display:none; }
+
+  /* Keep content spacing reasonable */
+  .cv-formation-grid{ grid-template-columns:1fr; gap:12px; }
+  .cv-education-item, .cv-cert-detail-item, .cv-project-detail, .cv-formation-box{ padding:12px; }
 }
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button{
-  font-family:'Inter',sans-serif;
-}
-
-::selection{
-  background:rgba(117,131,255,.35);
-  color:white;
-}
-
-
-/* ================================================= */
-/* BACKGROUND */
-/* ================================================= */
-
-.background-glow{
-
-  position:fixed;
-
-  width:900px;
-  height:900px;
-
-  top:-300px;
-  right:-250px;
-
-  border-radius:50%;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(117,131,255,.20),
-    transparent 70%
-  );
-
-  pointer-events:none;
-
-  z-index:-1;
-}
-
-
-body::before{
-
-  content:"";
-
-  position:fixed;
-  inset:0;
-
-  background-image:
-  linear-gradient(
-    rgba(255,255,255,.03) 1px,
-    transparent 1px
-  ),
-  linear-gradient(
-    90deg,
-    rgba(255,255,255,.03) 1px,
-    transparent 1px
-  );
-
-  background-size:70px 70px;
-
-  opacity:.25;
-
-  z-index:-2;
-}
-
-
-/* ================================================= */
-/* NAVBAR */
-/* ================================================= */
-
-.navbar{
-
-  position:sticky;
-  top:0;
-
-  width:100%;
-
-  padding:26px 8%;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  backdrop-filter:blur(18px);
-
-  background:
-  rgba(6,8,22,.72);
-
-  border-bottom:
-  1px solid rgba(255,255,255,.05);
-
-  z-index:1000;
-}
-
-/* Hide/show navbar on scroll (suavizado) */
-.navbar {
-  transition: transform .95s cubic-bezier(.22,.9,.28,1), opacity .75s ease, background .2s ease, border-color .2s ease;
-  will-change: transform, opacity;
-}
-
-.navbar.nav-hidden {
-  transform: translateY(-110%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.logo{
-
-  font-family:
-  'Playfair Display',
-  serif;
-
-  font-size:2rem;
-
-  letter-spacing:.5px;
-}
-
-nav{
-
-  display:flex;
-  gap:38px;
-}
-
-nav a{
-
-  position:relative;
-
-  color:#b8b8b8;
-
-  transition:.3s ease;
-}
-
-nav a:hover{
-  color:white;
-}
-
-nav a::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:-8px;
-
-  width:0;
-  height:1px;
-
-  background:var(--accent);
-
-  transition:.3s ease;
-}
-
-nav a:hover::after,
-nav a.active::after{
-
-  width:100%;
-}
-
-
-/* ================================================= */
-/* HERO */
-/* ================================================= */
-
-.hero{
-
-  min-height:100vh;
-
-  padding:0 8%;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  align-items:center;
 
   gap:90px;
 }
