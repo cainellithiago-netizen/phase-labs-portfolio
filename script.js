@@ -300,6 +300,35 @@ if (luxuryOverlay) {
 
 
 /* ==========================================
+   CV OVERLAY
+========================================== */
+
+const cvOverlay =
+  document.querySelector(".cv-overlay");
+
+const cvOverlayClose =
+  document.querySelector(".cv-overlay-close");
+
+if (cvOverlayClose) {
+  cvOverlayClose.addEventListener("click", () => {
+
+    cvOverlay.classList.remove("open");
+      document.body.classList.remove('overlay-open');
+
+  });
+}
+
+if (cvOverlay) {
+  cvOverlay.addEventListener("click", event => {
+    if (event.target === cvOverlay) {
+      cvOverlay.classList.remove("open");
+      document.body.classList.remove('overlay-open');
+    }
+  });
+}
+
+
+/* ==========================================
    BUTTON MICRO INTERACTIONS
 ========================================== */
 

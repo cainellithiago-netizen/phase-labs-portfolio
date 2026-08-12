@@ -83,6 +83,13 @@
           </button>
 
           <button
+            class="primary-btn"
+            onclick="document.querySelector('.cv-overlay').classList.add('open'); document.body.classList.add('overlay-open');"
+          >
+            Ver CV👁
+          </button>
+
+          <button
             class="secondary-btn"
             onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
           >
@@ -616,6 +623,266 @@
       <li>Un detalle de producto o colección inspirado en moda premium.</li>
     </ul>
 
+  </div>
+</div>
+
+<!-- CV OVERLAY -->
+<div class="cv-overlay">
+  <button class="cv-overlay-close" aria-label="Cerrar">×</button>
+  
+  <div class="cv-overlay-card">
+    <div class="cv-container">
+      
+      <!-- COLUMNA IZQUIERDA - SIDEBAR -->
+      <div class="cv-sidebar">
+        
+        <!-- FOTO -->
+        <div class="cv-photo-section">
+          <div class="cv-photo-placeholder">
+            <img src="img/imagen-foto-perfil.jpg" alt="Avatar Thiago Cainelli" class="cv-avatar-image"/>
+          </div>
+        </div>
+
+        <!-- NOMBRE EN SIDEBAR -->
+        <div class="cv-sidebar-header">
+          <h1 class="cv-name-sidebar">THIAGO CAINELLI</h1>
+          <p class="cv-title-sidebar">Programador en formación</p>
+        </div>
+
+        <!-- CONTACTO. -->
+        <div class="cv-sidebar-section">
+          <h3 class="cv-sidebar-title">CONTACTO</h3>
+          <div class="cv-contact-list">
+            <div class="cv-contact-item">
+              <span class="cv-contact-icon">📧</span>
+              <a href="mailto:cainellithiago@gmail.com">cainellithiago@gmail.com</a>
+            </div>
+            <div class="cv-contact-item">
+              <span class="cv-contact-icon">📍</span>
+              <span>Reconquista, Santa Fe, Argentina</span>
+            </div>
+            <div class="cv-contact-item">
+              <span class="cv-contact-icon">💻</span>
+              <a href="https://github.com/cainellithiago-netizen" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HABILIDADES TÉCNICAS. -->
+        <div class="cv-sidebar-section">
+          <h3 class="cv-sidebar-title">HABILIDADES TÉCNICAS</h3>
+          
+          <div class="cv-skill-group">
+            <h4>Front-End</h4>
+            <ul class="cv-sidebar-list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Responsive Design</li>
+              <li>Animaciones Web</li>
+            </ul>
+          </div>
+
+          <div class="cv-skill-group">
+            <h4>Back-End</h4>
+            <ul class="cv-sidebar-list">
+              <li>Python</li>
+              <li>Lógica de Programación</li>
+              <li>Algoritmos</li>
+              <li>POO</li>
+            </ul>
+          </div>
+
+          <div class="cv-skill-group">
+            <h4>Sistemas</h4>
+            <ul class="cv-sidebar-list">
+              <li>Administración de Servidores</li>
+              <li>Gestión de Sistemas</li>
+              <li>Redes</li>
+              <li>Gestión de Usuarios</li>
+            </ul>
+          </div>
+
+          <div class="cv-skill-group">
+            <h4>Herramientas</h4>
+            <ul class="cv-sidebar-list">
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+              <li>Pack Office</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- IDIOMAS. -->
+        <div class="cv-sidebar-section">
+          <h3 class="cv-sidebar-title">IDIOMAS</h3>
+          <div class="cv-language-sidebar">
+            <div class="cv-lang-item cv-lang-native">
+              <strong>Español</strong>
+              <p>Nativo</p>
+            </div>
+            <div class="cv-lang-item">
+              <strong>Inglés</strong>
+              <p>Nivel B2 (Certificado Academia.)</p>
+            </div>
+            <div class="cv-lang-item">
+              <strong>Italiano</strong>
+              <p>Nivel A1 (Certificado Academia.)</p>
+            </div>
+            <div class="cv-lang-item">
+              <strong>Portugués</strong>
+              <p>Nivel A1</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICACIONES SIDEBAR. -->
+        <div class="cv-sidebar-section">
+          <h3 class="cv-sidebar-title">CERTIFICACIONES</h3>
+          <ul class="cv-sidebar-list-cert">
+            <li>Python</li>
+            <li>Operador Junior Avanzado</li>
+            <li>Pack Office</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- COLUMNA DERECHA - CONTENIDO PRINCIPAL. -->
+      <div class="cv-main-content">
+
+        <!-- PERFIL PROFESIONAL. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">PERFIL PROFESIONAL</h2>
+          <p>
+            Estudiante de la Tecnicatura Universitaria en Programación de la Universidad Tecnológica Nacional (UTN), Facultad Regional Reconquista. Mi formación combina programación, desarrollo de software, desarrollo web, bases de datos, sistemas y redes.
+          </p>
+          <p>
+            Poseo experiencia práctica en administración y gestión de servidores y comunidades online, incluyendo gestión de usuarios, organización de comunidades y administración de servidores. Cuento con certificaciones complementarias en Python, Operador Junior Avanzado y Pack Office, así como formación en idiomas.
+          </p>
+          <p>
+            Me interesa especialmente la programación, el desarrollo de software, el desarrollo web y la creación de proyectos digitales.
+          </p>
+        </div>
+
+        <!-- EDUCACIÓN. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">EDUCACIÓN</h2>
+          
+          <div class="cv-education-item">
+            <div class="cv-education-header">
+              <strong>Tecnicatura Universitaria en Programación</strong>
+              <span class="cv-badge-main">En curso..</span>
+            </div>
+            <p class="cv-education-subtitle">Universidad Tecnológica Nacional (UTN) — Facultad Regional Reconquista</p>
+          </div>
+
+          <div class="cv-education-item">
+            <div class="cv-education-header">
+              <strong>Educación Secundaria</strong>
+            </div>
+            <p class="cv-education-subtitle">Escuela Normal / Juan Bautista Alberji N.º 203</p>
+          </div>
+        </div>
+
+        <!-- FORMACIÓN ACADÉMICA. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">FORMACIÓN ACADÉMICA</h2>
+          <p class="cv-intro-text">Como parte de mi formación universitaria estoy adquiriendo conocimientos en:</p>
+          
+          <div class="cv-formation-grid">
+            <div class="cv-formation-box">
+              <strong>Programación</strong>
+              <ul>
+                <li>Algoritmos</li>
+                <li>Lógica de programación</li>
+                <li>Estructuras de datos</li>
+                <li>Programación orientada a objetos</li>
+                <li>Resolución de problemas</li>
+              </ul>
+            </div>
+            <div class="cv-formation-box">
+              <strong>Desarrollo Web</strong>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Desarrollo responsive</li>
+                <li>Interactividad web</li>
+              </ul>
+            </div>
+            <div class="cv-formation-box">
+              <strong>Sistemas & Datos</strong>
+              <ul>
+                <li>Bases de datos</li>
+                <li>SQL</li>
+                <li>Sistemas y redes</li>
+                <li>Análisis de sistemas</li>
+                <li>Diseño de sistemas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCIA TÉCNICA. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">EXPERIENCIA TÉCNICA Y ADMINISTRATIVA</h2>
+          <p class="cv-intro-text">Experiencia práctica en administración de servidores y comunidades online:</p>
+          <ul class="cv-experience-list">
+            <li>Administración y configuración de servidores</li>
+            <li>Gestión de usuarios y permisos</li>
+            <li>Administración de comunidades online</li>
+            <li>Supervisión y mantenimiento de servidores</li>
+            <li>Resolución de problemas técnicos</li>
+            <li>Participación en equipos administrativos</li>
+            <li>Coordinación y organización comunitaria</li>
+          </ul>
+        </div>
+
+        <!-- CERTIFICACIONES DETALLADAS. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">CERTIFICACIONES Y FORMACIÓN COMPLEMENTARIA</h2>
+          
+          <div class="cv-cert-detail-item">
+            <strong>Python</strong>
+            <p>Certificación | Curso virtual realizado mediante una academia de Estados Unidos</p>
+          </div>
+
+          <div class="cv-cert-detail-item">
+            <strong>Operador Junior Avanzado</strong>
+            <p>Certificación</p>
+          </div>
+
+          <div class="cv-cert-detail-item">
+            <strong>Pack Office / Microsoft Office</strong>
+            <p>Certificación</p>
+          </div>
+        </div>
+
+        <!-- HARDWARE, SISTEMAS Y MANTENIMIENTO. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">HARDWARE, SISTEMAS Y MANTENIMIENTO</h2>
+          <p class="cv-intro-text">Conocimientos en hardware y sistemas informáticos, incluyendo identificación y diagnóstico de componentes, armado y mantenimiento de equipos, instalación y configuración de sistemas operativos, resolución de problemas de software y hardware, mantenimiento preventivo y correctivo, y optimización del funcionamiento general de computadoras.</p>
+        </div>
+
+        <!-- PROYECTOS PERSONALES. -->
+        <div class="cv-section">
+          <h2 class="cv-main-title">PROYECTOS PERSONALES</h2>
+          
+          <div class="cv-project-detail">
+            <strong>Portfolio Web Personal</strong>
+            <p>Proyecto orientado a presentar mi perfil profesional, formación, conocimientos y experiencia técnica mediante una interfaz web moderna e interactiva.</p>
+            <div class="cv-project-techs">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>
 
