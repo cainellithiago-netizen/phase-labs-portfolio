@@ -25,6 +25,18 @@
     rel="stylesheet"
   >
 
+  <!-- Critical fallback styles to restore theme if main CSS fails -->
+  <style>
+    :root{--bg:#060816;--text:#ffffff;--accent:#7583ff;--accent-2:#9ba6ff}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;margin:0}
+    header.navbar{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:transparent;z-index:2000}
+    header.navbar .logo{color:var(--text);font-weight:600}
+    header.navbar nav a{color:var(--accent-2);margin-left:18px;font-size:0.95rem}
+    .hero{padding-top:100px}
+    .primary-btn{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border-radius:999px;padding:12px 20px;border:none}
+    .cv-overlay{background:rgba(0,0,0,.85)}
+  </style>
+
 </head>
 
 <body>
