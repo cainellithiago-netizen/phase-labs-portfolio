@@ -2094,6 +2094,21 @@ body.overlay-open{
 .cv-preserve-mobile .cv-sidebar-list-cert,
 .cv-preserve-mobile .cv-language-sidebar{ font-size:0.78rem; }
 
+/* Make sidebar headings fit in narrow mobile sidebar */
+.cv-preserve-mobile .cv-sidebar-title{
+  font-size:0.62rem;
+  letter-spacing:1px;
+  padding-right:6px;
+  line-height:1.1;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.cv-preserve-mobile .cv-sidebar{
+  box-sizing:border-box; /* ensure padding counts inside width */
+}
+
 /* On mobile preserve mode, use the overlay card as the single scroll container
    so the sidebar does not have its own scrollbar and horizontal sliding is prevented. */
 .cv-preserve-mobile .cv-overlay-card{
@@ -2743,4 +2758,24 @@ body.cv-sidebar-collapsed .cv-container{
   );
 
   color:white;
+}
+
+/* Eye icon inside primary button */
+/* Ensure primary button content is centered and icon matches text color */
+.primary-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.btn-eye{
+  width:18px;
+  height:18px;
+  display:inline-block;
+  vertical-align:middle;
+}
+.eye-fallback{
+  font-size:1.05rem;
+  vertical-align:middle;
+  color:inherit;
+  display:inline-block;
 }

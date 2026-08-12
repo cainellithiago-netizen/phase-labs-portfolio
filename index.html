@@ -86,7 +86,9 @@
             class="primary-btn"
             onclick="document.querySelector('.cv-overlay').classList.add('open'); document.body.classList.add('overlay-open');"
           >
-            Ver CV👁
+            Ver CV
+              <img src="img/eye.svg" alt="ojo" class="btn-eye" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'" />
+            <span class="eye-fallback" style="display:none">&#128065;&#xfe0e;</span>
           </button>
 
           <button
