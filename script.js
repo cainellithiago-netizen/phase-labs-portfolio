@@ -349,6 +349,44 @@ if (cvOverlay) {
   });
 }
 
+// Toggle sidebar (used by Alt+Z on desktop and the mobile toggle button)
+function toggleCvSidebar(){
+  document.body.classList.toggle('cv-sidebar-collapsed');
+}
+
+// Alt+Z keyboard shortcut to toggle sidebar
+document.addEventListener('keydown', (e) => {
+  if (e.altKey && (e.key === 'z' || e.key === 'Z')){
+    toggleCvSidebar();
+  }
+});
+
+// Mobile toggle button handler (visible on small screens)
+const cvMobileToggle = document.querySelector('.cv-mobile-toggle');
+if (cvMobileToggle) {
+  cvMobileToggle.addEventListener('click', () => {
+    // on touch devices or small widths, behave like Alt+Z
+    if (window.innerWidth <= 480 || 'ontouchstart' in window) {
+      toggleCvSidebar();
+    }
+  });
+}
+
+// Ensure sidebar-collapsed clears when overlay closes
+if (cvOverlayClose) {
+  cvOverlayClose.addEventListener("click", () => {
+    document.body.classList.remove('cv-sidebar-collapsed');
+  });
+}
+
+if (cvOverlay) {
+  cvOverlay.addEventListener("click", event => {
+    if (event.target === cvOverlay) {
+      document.body.classList.remove('cv-sidebar-collapsed');
+    }
+  });
+}
+
 /* ==========================================
    BUTTON MICRO INTERACTIONS
 ========================================== */

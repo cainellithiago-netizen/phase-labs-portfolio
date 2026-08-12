@@ -2094,6 +2094,41 @@ body.overlay-open{
 .cv-preserve-mobile .cv-main-title{ font-size:0.95rem; }
 .cv-preserve-mobile .cv-education-item, .cv-preserve-mobile .cv-cert-detail-item, .cv-preserve-mobile .cv-project-detail{ padding:10px; }
 
+/* Mobile toggle button (visible on small screens) */
+.cv-mobile-toggle{
+  display:none;
+  position:absolute;
+  left:14px;
+  top:14px;
+  z-index:1502;
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  border:none;
+  background:rgba(117,131,255,.12);
+  color:#9ba6ff;
+  font-size:1.2rem;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+
+@media (max-width:480px){
+  .cv-mobile-toggle{ display:flex; }
+}
+
+/* Collapsed sidebar state: used by Alt+Z or mobile toggle */
+body.cv-sidebar-collapsed .cv-sidebar{
+  display:none;
+}
+
+body.cv-sidebar-collapsed .cv-container{
+  grid-template-columns: 1fr;
+}
+
+/* Ensure no horizontal dragging cursor on touch devices inside overlay */
+.cv-overlay, .cv-container, .cv-sidebar, .cv-main-content{ touch-action:pan-y pinch-zoom; }
+
 
 
 /* ================================================= */
