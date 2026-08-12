@@ -2079,12 +2079,20 @@ body.overlay-open{
 /* This avoids overriding global media queries and keeps changes reversible. */
 /* The class `cv-preserve-mobile` is added to <body> by script when overlay opens. */
 .cv-preserve-mobile .cv-overlay-card{ width:95vw; max-height:95vh; }
-.cv-preserve-mobile .cv-container{ display:grid; grid-template-columns: 110px 1fr; gap:18px; align-items:start; }
-.cv-preserve-mobile .cv-sidebar{ width:110px; min-width:110px; padding:18px 8px; border-right:1px solid rgba(117,131,255,.06); height:100%; align-self:stretch; display:flex; flex-direction:column; gap:12px; overflow-y:auto; text-align:left; }
-.cv-preserve-mobile .cv-photo-placeholder{ width:86px; height:86px; border-radius:10px; margin:0 auto; }
-.cv-preserve-mobile .cv-name-sidebar{ font-size:0.95rem; }
-.cv-preserve-mobile .cv-main-content{ padding:18px 14px; max-height:85vh; overflow-y:auto; }
+.cv-preserve-mobile .cv-container{ display:grid; grid-template-columns: 110px 1fr; gap:14px; align-items:start; }
+.cv-preserve-mobile .cv-overlay-card{ width:94vw; max-width:980px; max-height:92vh; transform: scale(0.95); transform-origin: center top; }
+.cv-preserve-mobile .cv-sidebar{ width:110px; min-width:110px; padding:14px 8px; border-right:1px solid rgba(117,131,255,.06); height:100%; align-self:stretch; display:flex; flex-direction:column; gap:10px; overflow-y:auto; text-align:left; }
+.cv-preserve-mobile .cv-photo-placeholder{ width:76px; height:76px; border-radius:10px; margin:0 auto; }
+.cv-preserve-mobile .cv-name-sidebar{ font-size:0.92rem; }
+.cv-preserve-mobile .cv-main-content{ padding:14px 12px; max-height:86vh; overflow-y:auto; font-size:0.95rem; }
 .cv-preserve-mobile .cv-main-content::before{ display:none; }
+.cv-preserve-mobile .cv-sidebar-list,
+.cv-preserve-mobile .cv-sidebar-list-cert,
+.cv-preserve-mobile .cv-language-sidebar{ font-size:0.78rem; }
+
+/* Slightly reduce hero/heading sizes inside overlay on very small screens */
+.cv-preserve-mobile .cv-main-title{ font-size:0.95rem; }
+.cv-preserve-mobile .cv-education-item, .cv-preserve-mobile .cv-cert-detail-item, .cv-preserve-mobile .cv-project-detail{ padding:10px; }
 
 
 
