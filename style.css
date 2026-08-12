@@ -1275,7 +1275,7 @@ body.overlay-open{
   width:100%;
   background: linear-gradient(135deg, #0a0d1f 0%, #0f1230 50%, #0a0d1f 100%);
   border-radius:16px;
-  overflow:hidden; /* keep horizontal overflow hidden */
+  overflow:hidden; /* keep horizontal overflow hidden; preserve-mobile controls scrolling on small screens */
   box-shadow: 
     0 0 60px rgba(117,131,255,.2),
     0 30px 90px rgba(0,0,0,.6),
