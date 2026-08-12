@@ -2074,6 +2074,19 @@ body.overlay-open{
   }
 }
 
+/* ================================================= */
+/* Scoped mobile-preserve layout (applies only while CV overlay open on small screens) */
+/* This avoids overriding global media queries and keeps changes reversible. */
+/* The class `cv-preserve-mobile` is added to <body> by script when overlay opens. */
+.cv-preserve-mobile .cv-overlay-card{ width:95vw; max-height:95vh; }
+.cv-preserve-mobile .cv-container{ display:grid; grid-template-columns: 110px 1fr; gap:18px; align-items:start; }
+.cv-preserve-mobile .cv-sidebar{ width:110px; min-width:110px; padding:18px 8px; border-right:1px solid rgba(117,131,255,.06); height:100%; align-self:stretch; display:flex; flex-direction:column; gap:12px; overflow-y:auto; text-align:left; }
+.cv-preserve-mobile .cv-photo-placeholder{ width:86px; height:86px; border-radius:10px; margin:0 auto; }
+.cv-preserve-mobile .cv-name-sidebar{ font-size:0.95rem; }
+.cv-preserve-mobile .cv-main-content{ padding:18px 14px; max-height:85vh; overflow-y:auto; }
+.cv-preserve-mobile .cv-main-content::before{ display:none; }
+
+
 
 /* ================================================= */
 /* MOTION DEMO */
