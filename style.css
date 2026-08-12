@@ -1219,7 +1219,8 @@ body.overlay-open{
   align-items:flex-start;
   padding:40px 20px;
   padding-top:60px;
-  overflow:auto;
+  overflow-y:auto;
+  overflow-x:hidden; /* prevent horizontal sliding */
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1274,7 +1275,7 @@ body.overlay-open{
   width:100%;
   background: linear-gradient(135deg, #0a0d1f 0%, #0f1230 50%, #0a0d1f 100%);
   border-radius:16px;
-  overflow:hidden;
+  overflow:hidden; /* keep horizontal overflow hidden */
   box-shadow: 
     0 0 60px rgba(117,131,255,.2),
     0 30px 90px rgba(0,0,0,.6),
@@ -1500,6 +1501,8 @@ body.overlay-open{
   text-decoration:none;
   border-bottom:1px solid transparent;
   transition: all .2s ease;
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 .cv-contact-item a:hover{
@@ -1632,6 +1635,7 @@ body.overlay-open{
 .cv-main-content{
   padding:50px;
   background: linear-gradient(135deg, rgba(10,12,24,.8) 0%, rgba(15,18,48,.6) 100%);
+  /* main content not manage horizontal overflow; keep vertical scrolling only when needed */
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
   color:white;
@@ -2089,6 +2093,19 @@ body.overlay-open{
 .cv-preserve-mobile .cv-sidebar-list,
 .cv-preserve-mobile .cv-sidebar-list-cert,
 .cv-preserve-mobile .cv-language-sidebar{ font-size:0.78rem; }
+
+/* On mobile preserve mode, use the overlay card as the single scroll container
+   so the sidebar does not have its own scrollbar and horizontal sliding is prevented. */
+.cv-preserve-mobile .cv-overlay-card{
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+.cv-preserve-mobile .cv-sidebar,
+.cv-preserve-mobile .cv-main-content{
+  overflow:visible; /* let the parent overlay handle scrolling */
+  max-height:none;
+}
 
 /* Slightly reduce hero/heading sizes inside overlay on very small screens */
 .cv-preserve-mobile .cv-main-title{ font-size:0.95rem; }
