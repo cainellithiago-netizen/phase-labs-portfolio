@@ -2004,73 +2004,299 @@ body.overlay-open{
     grid-template-columns: 1fr;
   }
 
+  .cv-overlay-card{
+    max-width:100%;
+    width:95vw;
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:12px;
+  }
+
   .cv-sidebar{
-    padding:30px 24px;
+    padding:28px 20px;
     border-bottom: 1px solid rgba(117,131,255,.2);
     border-right:none;
+    min-height:auto;
   }
 
   .cv-main-content{
-    padding:30px 24px;
+    padding:28px 20px;
   }
 
   .cv-overlay{
-    padding:20px 0;
-    padding-top:50px;
+    padding:16px 0;
+    padding-top:60px;
   }
 
   .cv-overlay-close{
-    right:16px;
-    top:20px;
+    right:12px;
+    top:16px;
+    width:40px;
+    height:40px;
+    font-size:1.4rem;
+  }
+
+  .cv-photo-placeholder{
+    max-width:200px;
+    margin:0 auto 20px;
   }
 
   .cv-formation-grid{
     grid-template-columns: 1fr;
+    gap:16px;
   }
 
   .cv-main-title{
-    font-size:1rem;
+    font-size:0.95rem;
+    letter-spacing:1.5px;
+    margin-bottom:16px;
   }
 
   .cv-name-sidebar{
-    font-size:1.3rem;
+    font-size:1.2rem;
+    letter-spacing:1px;
+  }
+
+  .cv-title-sidebar{
+    font-size:0.7rem;
+    letter-spacing:1px;
+  }
+
+  .cv-sidebar-section-title{
+    font-size:0.7rem;
+    letter-spacing:1.5px;
+  }
+
+  .cv-sidebar-list li{
+    font-size:0.85rem;
+  }
+
+  .cv-education-item{
+    padding:12px;
+    font-size:0.85rem;
+  }
+
+  .cv-project-detail{
+    padding:16px;
+  }
+
+  .cv-cert-detail-item{
+    padding:16px;
+  }
+
+  .cv-formation-box{
+    padding:16px;
+    font-size:0.85rem;
+  }
+
+  .cv-main-content::before{
+    width:150px;
+    height:150px;
+    background: radial-gradient(circle at 30% 20%, rgba(117,131,255,.08) 0%, transparent 50%);
   }
 }
 
 @media (max-width: 480px) {
+  .cv-container{
+    grid-template-columns: 1fr;
+  }
+
+  .cv-overlay-card{
+    width:100vw;
+    max-height:95vh;
+    border-radius:8px;
+    margin:0;
+  }
+
   .cv-sidebar{
-    padding:24px 16px;
+    padding:20px 16px;
+    text-align:center;
   }
 
   .cv-main-content{
     padding:20px 16px;
   }
 
+  .cv-overlay{
+    padding:12px 0;
+    padding-top:50px;
+  }
+
+  .cv-overlay-close{
+    right:10px;
+    top:12px;
+    width:36px;
+    height:36px;
+    font-size:1.2rem;
+  }
+
+  .cv-photo-placeholder{
+    max-width:150px;
+    height:150px;
+    margin:0 auto 16px;
+  }
+
+  .cv-photo-section{
+    display:flex;
+    justify-content:center;
+  }
+
   .cv-name-sidebar{
-    font-size:1.1rem;
+    font-size:1rem;
+    letter-spacing:0.8px;
+    margin-bottom:8px;
   }
 
   .cv-title-sidebar{
-    font-size:0.75rem;
+    font-size:0.65rem;
+    letter-spacing:1px;
+    margin-bottom:16px;
+  }
+
+  .cv-sidebar-section-title{
+    font-size:0.65rem;
+    letter-spacing:1.3px;
+    margin-top:16px;
+    margin-bottom:10px;
+  }
+
+  .cv-sidebar-list{
+    list-style:none;
+    font-size:0.8rem;
+    gap:6px;
+  }
+
+  .cv-sidebar-list li{
+    font-size:0.8rem;
+    margin-bottom:6px;
+    padding-left:0;
+    text-align:left;
+  }
+
+  .cv-sidebar-list li:before{
+    content:"• ";
+    margin-right:6px;
   }
 
   .cv-main-title{
-    font-size:0.9rem;
-    margin-bottom:12px;
+    font-size:0.85rem;
+    letter-spacing:1.2px;
+    margin-bottom:14px;
+  }
+
+  .cv-intro-text{
+    font-size:0.8rem;
+    line-height:1.4;
+    margin-bottom:14px;
   }
 
   .cv-education-header{
     flex-direction:column;
-    gap:8px;
+    gap:6px;
   }
 
-  .cv-photo-placeholder{
-    aspect-ratio: 1;
+  .cv-badge-main{
+    padding:3px 10px;
+    font-size:0.65rem;
+  }
+
+  .cv-education-item{
+    padding:12px;
+    font-size:0.8rem;
+    margin-bottom:10px;
+  }
+
+  .cv-formation-grid{
+    grid-template-columns: 1fr;
+    gap:12px;
+  }
+
+  .cv-formation-box{
+    padding:14px;
+    font-size:0.8rem;
+  }
+
+  .cv-formation-box strong{
+    font-size:0.85rem;
+    display:block;
+    margin-bottom:8px;
+  }
+
+  .cv-formation-box ul{
+    gap:4px;
+  }
+
+  .cv-formation-box li{
+    font-size:0.75rem;
+  }
+
+  .cv-experience-list li{
+    font-size:0.8rem;
+    margin-bottom:8px;
+    padding-left:16px;
+  }
+
+  .cv-project-detail{
+    padding:14px;
+    margin-bottom:12px;
+  }
+
+  .cv-project-detail strong{
+    display:block;
+    font-size:0.85rem;
+    margin-bottom:6px;
+  }
+
+  .cv-project-detail p{
+    font-size:0.8rem;
+    line-height:1.4;
+    margin-bottom:8px;
+  }
+
+  .cv-project-techs{
+    gap:6px;
+  }
+
+  .cv-project-techs span{
+    font-size:0.7rem;
+    padding:4px 8px;
+  }
+
+  .cv-cert-detail-item{
+    padding:14px;
+    margin-bottom:12px;
+  }
+
+  .cv-cert-detail-item strong{
+    display:block;
+    font-size:0.85rem;
+    margin-bottom:4px;
+  }
+
+  .cv-cert-detail-item p{
+    font-size:0.75rem;
+  }
+
+  .cv-lang-item{
+    padding:10px 12px;
+    font-size:0.8rem;
+    margin-bottom:8px;
+  }
+
+  .cv-lang-item strong{
+    font-size:0.82rem;
+  }
+
+  .cv-lang-item p{
+    font-size:0.75rem;
   }
 
   .cv-main-content::before{
-    width:200px;
-    height:200px;
+    display:none;
+  }
+
+  .cv-sidebar::before{
+    display:none;
   }
 }
 
