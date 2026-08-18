@@ -1636,20 +1636,41 @@ body.overlay-open{
   border:1px solid rgba(117,131,255,.4);
   border-radius:5px;
   padding:6px 8px;
-  background:rgba(117,131,255,.14);
+  background:linear-gradient(135deg, rgba(117,131,255,.24), rgba(117,131,255,.08));
   color:#9ba6ff;
   font-size:.66rem;
   line-height:1.1;
   cursor:pointer;
-  transition:background .2s ease, border-color .2s ease, transform .2s ease;
+  box-shadow:
+    0 0 10px rgba(117,131,255,.22),
+    0 0 18px rgba(117,131,255,.1) inset;
+  text-shadow:0 0 8px rgba(155,166,255,.65);
+  animation: certificateButtonGlow 3s ease-in-out infinite;
+  transition:background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+@keyframes certificateButtonGlow{
+  0%, 100%{
+    box-shadow:
+      0 0 10px rgba(117,131,255,.2),
+      0 0 18px rgba(117,131,255,.08) inset;
+  }
+  50%{
+    box-shadow:
+      0 0 18px rgba(117,131,255,.42),
+      0 0 24px rgba(117,131,255,.16) inset;
+  }
 }
 
 .cv-certificate-button:hover,
 .cv-certificate-button:focus-visible{
-  background:rgba(117,131,255,.28);
+  background:linear-gradient(135deg, rgba(117,131,255,.42), rgba(117,131,255,.16));
   border-color:#9ba6ff;
   outline:none;
   transform:translateY(-1px);
+  box-shadow:
+    0 0 24px rgba(117,131,255,.6),
+    0 0 28px rgba(117,131,255,.22) inset;
 }
 
 /* ================================================= */
