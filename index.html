@@ -743,9 +743,26 @@
         <div class="cv-sidebar-section">
           <h3 class="cv-sidebar-title">CERTIFICACIONES</h3>
           <ul class="cv-sidebar-list-cert">
-            <li>Python</li>
-            <li>Operador Junior Avanzado</li>
-            <li>Pack Office</li>
+            <li>
+              <span>Python</span>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Python" data-cert-src="img/certificado-python.jpeg">Ver certificado...</button>
+            </li>
+            <li>
+              <span>Operador Junior Avanzado</span>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Operador de PC" data-cert-src="img/certificado-operadorPC.jpeg">Ver certificado...</button>
+            </li>
+            <li>
+              <span>Inglés</span>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Inglés" data-cert-src="img/certificado-ingles.jpeg">Ver certificado...</button>
+            </li>
+            <li>
+              <span>Italiano</span>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Italiano" data-cert-src="img/certificado-italiano.jpeg">Ver certificado...</button>
+            </li>
+            <li>
+              <span>Secundario</span>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Educación Secundaria" data-cert-src="img/certificado-secundario.jpeg">Ver certificado...</button>
+            </li>
           </ul>
         </div>
 
@@ -783,6 +800,7 @@
           <div class="cv-education-item">
             <div class="cv-education-header">
               <strong>Educación Secundaria</strong>
+              <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Educación Secundaria" data-cert-src="img/certificado-secundario.jpeg">Ver certificado...</button>
             </div>
             <p class="cv-education-subtitle">Escuela Normal / Juan Bautista Alberdi N.º 203</p>
           </div>
@@ -849,16 +867,25 @@
           <div class="cv-cert-detail-item">
             <strong>Python</strong>
             <p>Certificación | Curso virtual realizado mediante una academia de Estados Unidos</p>
+            <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Python" data-cert-src="img/certificado-python.jpeg">Ver certificado...</button>
           </div>
 
           <div class="cv-cert-detail-item">
             <strong>Operador Junior Avanzado</strong>
             <p>Certificación</p>
+            <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Operador de PC" data-cert-src="img/certificado-operadorPC.jpeg">Ver certificado...</button>
           </div>
 
           <div class="cv-cert-detail-item">
-            <strong>Pack Office / Microsoft Office</strong>
-            <p>Certificación</p>
+            <strong>Inglés</strong>
+            <p>Nivel B2 (Certificado de academia)</p>
+            <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Inglés" data-cert-src="img/certificado-ingles.jpeg">Ver certificado...</button>
+          </div>
+
+          <div class="cv-cert-detail-item">
+            <strong>Italiano</strong>
+            <p>Nivel A1 (Certificado de academia)</p>
+            <button class="cv-certificate-button" type="button" data-cert-title="Certificado de Italiano" data-cert-src="img/certificado-italiano.jpeg">Ver certificado...</button>
           </div>
         </div>
 
@@ -886,6 +913,15 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+<!-- CERTIFICATE PREVIEW -->
+<div class="certificate-modal" aria-hidden="true">
+  <div class="certificate-modal-card" role="dialog" aria-modal="true" aria-labelledby="certificate-modal-title">
+    <button class="certificate-modal-close" type="button" aria-label="Cerrar certificado">×</button>
+    <h2 id="certificate-modal-title">Certificado</h2>
+    <img class="certificate-modal-image" src="" alt="" />
   </div>
 </div>
 

@@ -388,6 +388,51 @@ if (cvOverlay) {
 }
 
 /* ==========================================
+   CERTIFICATE PREVIEW
+========================================== */
+
+const certificateModal = document.querySelector('.certificate-modal');
+const certificateModalClose = document.querySelector('.certificate-modal-close');
+const certificateModalTitle = document.querySelector('#certificate-modal-title');
+const certificateModalImage = document.querySelector('.certificate-modal-image');
+const certificateButtons = document.querySelectorAll('.cv-certificate-button');
+
+function closeCertificateModal(){
+  if (!certificateModal) return;
+
+  certificateModal.classList.remove('open');
+  certificateModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('certificate-modal-open');
+}
+
+certificateButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (!certificateModal || !certificateModalTitle || !certificateModalImage) return;
+
+    certificateModalTitle.textContent = button.dataset.certTitle;
+    certificateModalImage.src = button.dataset.certSrc;
+    certificateModalImage.alt = button.dataset.certTitle;
+    certificateModal.classList.add('open');
+    certificateModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('certificate-modal-open');
+  });
+});
+
+if (certificateModalClose) {
+  certificateModalClose.addEventListener('click', closeCertificateModal);
+}
+
+if (certificateModal) {
+  certificateModal.addEventListener('click', event => {
+    if (event.target === certificateModal) closeCertificateModal();
+  });
+}
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeCertificateModal();
+});
+
+/* ==========================================
    BUTTON MICRO INTERACTIONS
 ========================================== */
 

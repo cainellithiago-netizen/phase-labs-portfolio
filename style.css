@@ -1621,11 +1621,35 @@ body.overlay-open{
   border-left: 2px solid #7583ff;
   border-radius:4px;
   transition: all .2s ease;
+  display:flex;
+  flex-direction:column;
+  gap:7px;
 }
 
 .cv-sidebar-list-cert li:hover{
   background: rgba(117,131,255,.08);
   padding-left:16px;
+}
+
+.cv-certificate-button{
+  align-self:flex-start;
+  border:1px solid rgba(117,131,255,.4);
+  border-radius:5px;
+  padding:6px 8px;
+  background:rgba(117,131,255,.14);
+  color:#9ba6ff;
+  font-size:.66rem;
+  line-height:1.1;
+  cursor:pointer;
+  transition:background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.cv-certificate-button:hover,
+.cv-certificate-button:focus-visible{
+  background:rgba(117,131,255,.28);
+  border-color:#9ba6ff;
+  outline:none;
+  transform:translateY(-1px);
 }
 
 /* ================================================= */
@@ -1931,6 +1955,80 @@ body.overlay-open{
   margin:0;
 }
 
+.cv-cert-detail-item .cv-certificate-button{
+  margin-top:12px;
+}
+
+.cv-education-header .cv-certificate-button{
+  flex-shrink:0;
+}
+
+/* ================================================= */
+/* CERTIFICATE PREVIEW MODAL */
+/* ================================================= */
+
+.certificate-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1600;
+  align-items:center;
+  justify-content:center;
+  padding:32px 20px;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(8px);
+  overflow:auto;
+}
+
+.certificate-modal.open{
+  display:flex;
+}
+
+body.certificate-modal-open{
+  overflow:hidden;
+}
+
+.certificate-modal-card{
+  position:relative;
+  width:min(920px, 100%);
+  max-height:calc(100vh - 64px);
+  padding:28px;
+  overflow:auto;
+  border:1px solid rgba(117,131,255,.35);
+  border-radius:14px;
+  background:linear-gradient(135deg, #0a0d1f, #11183a);
+  box-shadow:0 25px 90px rgba(0,0,0,.65), 0 0 45px rgba(117,131,255,.18);
+}
+
+.certificate-modal-card h2{
+  margin:0 42px 20px 0;
+  color:#9ba6ff;
+  font-family:'Playfair Display',serif;
+  font-size:1.25rem;
+}
+
+.certificate-modal-close{
+  position:absolute;
+  top:12px;
+  right:14px;
+  border:none;
+  background:transparent;
+  color:#9ba6ff;
+  font-size:2rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+.certificate-modal-image{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:calc(100vh - 150px);
+  object-fit:contain;
+  border-radius:6px;
+  background:#060816;
+}
+
 /* PROYECTOS */
 .cv-project-detail{
   padding:18px;
@@ -2107,6 +2205,26 @@ body.overlay-open{
 
 .cv-preserve-mobile .cv-sidebar{
   box-sizing:border-box; /* ensure padding counts inside width */
+}
+
+.cv-preserve-mobile .cv-sidebar-list-cert li{
+  min-width:0;
+  padding-left:7px;
+  padding-right:7px;
+}
+
+.cv-preserve-mobile .cv-sidebar-list-cert .cv-certificate-button{
+  width:100%;
+  min-width:0;
+  padding:5px 3px;
+  font-size:.55rem;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+.cv-preserve-mobile .cv-cert-detail-item .cv-certificate-button{
+  max-width:100%;
+  white-space:normal;
 }
 
 /* On mobile preserve mode, use the overlay card as the single scroll container
